@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Razon Live Lab — Study, build, and secure AI systems live</title>
-<meta name="description" content="Razon Live Lab by David Ortiz / Razon. Deep-work streams, AI news, sanitized build demos, and security-first automation workflows. EN / ES.">
+<title>Razon Live Lab: Raw dogging programming, live Mon-Fri 6-8 PM CT</title>
+<meta name="description" content="Learning programming in public, live on Twitch Mon-Fri 6-8 PM CT. Raw dogging programming: no hiding behind the abstractions. By David Ortiz / Razon. EN / ES.">
 <meta name="theme-color" content="#0e1116">
 <link rel="icon" type="image/png" href="favicon.png">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Razon Live Lab">
-<meta property="og:description" content="Study, build, and secure AI systems live. EN / ES.">
+<meta property="og:title" content="Razon Live Lab: Raw dogging programming, live Mon-Fri 6-8 PM CT">
+<meta property="og:description" content="Learning programming in public. Live on Twitch Mon-Fri 6-8 PM CT. Aprendiendo a programar en publico. EN / ES.">
 <meta property="og:url" content="https://razonlab.com">
-<!-- og:image — add a 1200x630 banner export and set its URL here -->
+<!-- og:image: 1200x630 banner -->
 <meta property="og:image" content="https://razonlab.com/og.png">
 <!-- Structured data for search engines -->
 <script type="application/ld+json">
@@ -26,7 +26,7 @@
       "url": "https://razonlab.com",
       "logo": "https://razonlab.com/favicon.png",
       "image": "https://razonlab.com/og.png",
-      "description": "Secure AI study-and-build lab by David Ortiz (Razon). Deep-work streams, AI news, sanitized build demos, and security-first automation workflows. EN / ES.",
+      "description": "Learning-in-public lab by David Ortiz (Razon). Raw Dogging Programming: learning programming from the ground up, live on Twitch, Monday to Friday 6:00-8:00 PM Central. EN / ES.",
       "founder": { "@id": "https://razonlab.com/#david" },
       "sameAs": [
         "https://youtube.com/@razonlab",
@@ -60,6 +60,22 @@
       "name": "Razon Live Lab",
       "publisher": { "@id": "https://razonlab.com/#org" },
       "inLanguage": ["en", "es"]
+    },
+    {
+      "@type": "BroadcastEvent",
+      "@id": "https://razonlab.com/#stream",
+      "name": "Raw Dogging Programming (live stream)",
+      "description": "Learning programming without hiding behind the abstractions. Live Monday to Friday, 6:00-8:00 PM Central (CT).",
+      "isLiveBroadcast": true,
+      "publishedOn": { "@type": "BroadcastService", "name": "Twitch", "url": "https://twitch.tv/razonlab" },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "byDay": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday"],
+        "startTime": "18:00",
+        "endTime": "20:00",
+        "scheduleTimezone": "America/Chicago"
+      },
+      "organizer": { "@id": "https://razonlab.com/#david" }
     }
   ]
 }
@@ -129,13 +145,6 @@
   .flow{display:flex; flex-wrap:wrap; gap:10px}
   .pill{background:var(--card); border:1px solid var(--line); border-radius:999px; padding:9px 15px; font-size:.9rem; color:var(--muted)}
   .pill b{color:var(--ink)}
-  /* offers */
-  .offer{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;
-    background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 20px; margin-bottom:12px}
-  .offer .o-l h3{margin:0 0 2px; font-size:1.05rem}
-  .offer .o-l p{margin:0; color:var(--muted); font-size:.9rem}
-  .offer .o-r{display:flex; align-items:center; gap:16px}
-  .price{color:var(--teal); font-weight:800; white-space:nowrap}
   /* lanes */
   .lane{border-left:3px solid var(--teal-dim)}
   /* contact / footer */
@@ -150,8 +159,6 @@
 
 <!-- ============================================================
      EDIT THESE LINKS, THEN DEPLOY. Everything below reads from here.
-     Watch links are pre-filled to @razonlab. Replace the REPLACE_*
-     payment links with your real Stripe Payment Link URLs.
      ============================================================ -->
 <script>
   const LINKS = {
@@ -159,12 +166,6 @@
     twitch:   "https://twitch.tv/razonlab",
     x:        "https://x.com/Razonapp",
     github:   "https://github.com/RazonIn4K",
-    support:  "https://buy.stripe.com/8x2aEZ0gi8Jk99f144",
-    consult:  "mailto:hello@razonlab.com?subject=Book%20a%20%2449%20consult",
-    audit:    "mailto:hello@razonlab.com?subject=Automation%20audit",
-    stacksetup:"mailto:hello@razonlab.com?subject=Stack%20setup",
-    localbiz: "mailto:hello@razonlab.com?subject=Local%20business%20funnel%20audit",
-    build:    "mailto:hello@razonlab.com?subject=Scope%20a%20build",
     davidtiz: "https://davidtiz.com"
   };
 </script>
@@ -175,7 +176,7 @@
     <nav>
       <a href="#watch">Watch</a>
       <a href="#schedule">Schedule</a>
-      <a href="#work">Work with me</a>
+      <a href="#series">Series</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -186,13 +187,12 @@
     <div class="eyebrow">Razon Live Lab</div>
     <h1>Study, build, and secure AI&nbsp;systems live.</h1>
     <p class="tag">Estudia, construye y asegura sistemas de IA en vivo. <span class="es">EN / ES.</span></p>
-    <p class="lede">Deep-work streams, AI news, sanitized build demos, and security-first automation workflows by David Ortiz / Razon.</p>
+    <p style="color:var(--ink);font-weight:700;margin:0 0 1rem"><span style="color:var(--teal)">●</span> Live Mon-Fri 6-8 PM CT on Twitch <span class="es">· En vivo lun-vie 6-8 PM CT</span></p>
+    <p class="lede">Learning programming from the ground up, live. Deep-work sessions and honest builds by David Ortiz / Razon.</p>
     <div class="btns">
-      <a class="btn primary" data-link="youtube" href="#">▶ Watch on YouTube</a>
-      <a class="btn ghost" data-link="twitch" href="#">Watch on Twitch</a>
+      <a class="btn primary" data-link="twitch" href="#">▶ Watch on Twitch</a>
+      <a class="btn ghost" data-link="youtube" href="#">Watch on YouTube</a>
       <a class="btn ghost" data-link="x" href="#">Follow on X</a>
-      <a class="btn amber" data-link="consult" href="#">Book a $49 consult</a>
-      <a class="btn ghost" data-link="support" href="#">Support the stream</a>
     </div>
   </div>
 </section>
@@ -221,49 +221,35 @@
 
 <section id="schedule" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
-    <div class="eyebrow">What a stream looks like</div>
-    <h2>Typical format</h2>
-    <p style="margin:6px 0 14px;color:var(--muted)">Live on <a data-link="twitch" href="#">Twitch</a>, with VODs and explainers on <a data-link="youtube" href="#">YouTube</a>. Follow on Twitch to get notified when a stream goes live.</p>
+    <div class="eyebrow">Schedule</div>
+    <h2>Live Mon-Fri, 6:00-8:00 PM Central (CT)</h2>
+    <p style="margin:-6px 0 10px;color:var(--muted)"><span class="es">En vivo de lunes a viernes, 6:00-8:00 PM, hora del Centro (CT).</span></p>
+    <p style="margin:6px 0 14px;color:var(--muted)">Live on <a data-link="twitch" href="#">Twitch</a>, with VODs and explainers on <a data-link="youtube" href="#">YouTube</a>. Follow on <a data-link="twitch" href="#">Twitch</a> to get notified when the stream goes live.</p>
+    <h3 style="margin:18px 0 10px">Typical format</h3>
     <div class="flow">
-      <span class="pill"><b>1</b> · Starting Soon + Today's Mission</span>
-      <span class="pill"><b>2</b> · Deep Work</span>
-      <span class="pill"><b>3</b> · AI News Desk</span>
-      <span class="pill"><b>4</b> · Deep Work</span>
-      <span class="pill"><b>5</b> · Sanitized Build With Me</span>
-      <span class="pill"><b>6</b> · Q&amp;A / recap</span>
+      <span class="pill"><b>1</b> · Starting Soon + Today's Question</span>
+      <span class="pill"><b>2</b> · Initial model, out loud</span>
+      <span class="pill"><b>3</b> · Attempt (deep work)</span>
+      <span class="pill"><b>4</b> · Abstraction check</span>
+      <span class="pill"><b>5</b> · Where it broke</span>
+      <span class="pill"><b>6</b> · Updated model + Q&amp;A</span>
     </div>
   </div>
 </section>
 
-<section id="work">
+<section id="series">
   <div class="wrap">
-    <div class="eyebrow">Work with me</div>
-    <h2>Fixed-scope help, priced up front</h2>
-    <p class="sub">If your AI workflow, GHL pipeline, voice agent, or lead follow-up system is messy, start with a mini-audit. First milestone: map the system, find the highest-ROI fix, and hand you a written runbook.</p>
-
-    <div class="offer">
-      <div class="o-l"><h3>Support the stream</h3><p>Keep the lab running — any amount.</p></div>
-      <div class="o-r"><span class="price">Custom</span><a class="btn primary" data-link="support" href="#">Support</a></div>
-    </div>
-    <div class="offer">
-      <div class="o-l"><h3>30-minute AI / workflow consult</h3><p>Bring one problem; leave with a direction.</p></div>
-      <div class="o-r"><span class="price">$49</span><a class="btn primary" data-link="consult" href="#">Book a consult</a></div>
-    </div>
-    <div class="offer">
-      <div class="o-l"><h3>AI Workflow / Agent Safety Mini-Audit</h3><p>System map + highest-ROI fix + written runbook.</p></div>
-      <div class="o-r"><span class="price">$99–$250</span><a class="btn ghost" data-link="audit" href="#">Get an audit</a></div>
-    </div>
-    <div class="offer">
-      <div class="o-l"><h3>Stream / Study Stack Setup</h3><p>OBS, Stream Deck, Raycast, and privacy guardrails configured.</p></div>
-      <div class="o-r"><span class="price">$149–$399</span><a class="btn ghost" data-link="stacksetup" href="#">Set up my stack</a></div>
-    </div>
-    <div class="offer">
-      <div class="o-l"><h3>Local Business Digital Cleanup</h3><p>Audit and fix the funnel, follow-up, and lead flow.</p></div>
-      <div class="o-r"><span class="price">$750–$1,500</span><a class="btn ghost" data-link="localbiz" href="#">Audit my funnel</a></div>
-    </div>
-    <div class="offer">
-      <div class="o-l"><h3>GHL + Vapi/Retell + n8n fixed build</h3><p>Scoped automation build with a clear deliverable.</p></div>
-      <div class="o-r"><span class="price">$500–$2,500+</span><a class="btn ghost" data-link="build" href="#">Scope a build</a></div>
+    <div class="eyebrow">The series</div>
+    <h2>Raw Dogging Programming</h2>
+    <p class="sub" style="color:var(--ink);font-weight:600;max-width:none">Learning programming without hiding behind the abstractions.<br><span class="es">Aprendiendo a programar sin esconderme detras de las abstracciones.</span></p>
+    <p class="sub">I'm learning programming from the ground up, live. No pretending I understand an abstraction until I can explain it without looking. Each session follows the same loop:</p>
+    <div class="flow">
+      <span class="pill"><b>1</b> · Question</span>
+      <span class="pill"><b>2</b> · Initial model</span>
+      <span class="pill"><b>3</b> · Attempt</span>
+      <span class="pill"><b>4</b> · Abstraction check</span>
+      <span class="pill"><b>5</b> · Where it broke</span>
+      <span class="pill"><b>6</b> · Updated model</span>
     </div>
   </div>
 </section>
@@ -276,7 +262,7 @@
       <div class="card lane"><h3>PromptDefenders</h3><p>AI security, prompt-injection defense, and agent-safety templates.</p></div>
       <div class="card lane"><h3>High Encode Learning</h3><p>The commercial studio: local-business websites, automations, and lead capture.</p></div>
       <div class="card lane"><h3>CSBrain AI</h3><p>Public notes, mind maps, and RAG experiments.</p></div>
-      <div class="card lane"><h3>DavidTiz</h3><p>David's personal portfolio and field notes. <a data-link="davidtiz" href="#" style="color:var(--teal);text-decoration:none">davidtiz.com →</a></p></div>
+      <div class="card lane"><h3>DavidTiz</h3><p>Portfolio and commercial work. Hiring inquiries go here. <a data-link="davidtiz" href="#" style="color:var(--teal);text-decoration:none">davidtiz.com →</a></p></div>
     </div>
   </div>
 </section>
@@ -286,7 +272,7 @@
     <div class="card">
       <div class="eyebrow">Contact</div>
       <h2 style="margin:.4rem 0 .3rem">For work, collabs, or questions</h2>
-      <p style="color:var(--muted);margin:0 0 .6rem">Drop a line — I read everything.</p>
+      <p style="color:var(--muted);margin:0 0 .6rem">Drop a line. I read everything.</p>
       <a href="mailto:hello@razonlab.com">hello@razonlab.com</a>
     </div>
   </div>
@@ -308,18 +294,10 @@
 <script>
   // Wire every [data-link] element to the LINKS config above.
   document.querySelectorAll('[data-link]').forEach(function(el){
-    var key = el.getAttribute('data-link');
-    var url = LINKS[key];
+    var url = LINKS[el.getAttribute('data-link')];
     if(!url) return;
-    var unset = (url.indexOf('REPLACE_') === 0);
-    // Until a real Stripe link is set, send the button to the contact section instead of a dead link.
-    el.setAttribute('href', unset ? '#contact' : url);
-    if(!unset && url.indexOf('http') === 0){ el.setAttribute('target','_blank'); el.setAttribute('rel','noopener'); }
-    // Dev-only reminder: dashed outline shows ONLY on localhost so the public page looks finished.
-    if(unset){
-      el.title='Set this Stripe link in the LINKS config';
-      if(location.hostname==='localhost'||location.hostname==='127.0.0.1'){ el.style.outline='2px dashed var(--amber)'; }
-    }
+    el.setAttribute('href', url);
+    if(url.indexOf('http') === 0){ el.setAttribute('target','_blank'); el.setAttribute('rel','noopener'); }
   });
 </script>
 <!-- Analytics: paste your Cloudflare Web Analytics or Plausible snippet just above </body>. -->
