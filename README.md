@@ -2,7 +2,10 @@
 
 This repository preserves the standalone Razon Live Lab source while useful material is evaluated for migration. The selected portfolio role is Razon Lab, the experimental research and prototyping arm of RazonWorks.
 
-The repository remains a static site with one self-contained HTML file and no build step. Phase 0 changes documentation only. It does not change the public site, hosting, domain, or redirect behavior.
+The repository remains a static site with one self-contained HTML file and no
+build step. The current migration-inventory slice adds JSON documentation and a
+Node integrity test only. It does not change the public site, hosting, domain,
+or redirect behavior.
 
 ## Brand role
 
@@ -21,13 +24,21 @@ The canonical portfolio decision and contract live in the `RazonIn4K/razonworks`
 - `favicon.png`: current logo and favicon.
 - `og.png`: current 1200 x 630 social preview image.
 - `docs/BRAND-BOUNDARY.md`: target brand contract, evidence standard, and migration guardrails.
+- `docs/migration/standalone-source-inventory.json`: source revision, runtime
+  hashes, artifact classifications, and required follow-up evidence.
+- `tests/migration-inventory.test.mjs`: fail-closed inventory and runtime-byte
+  integrity checks.
 - `AGENTS.md`: contributor instructions and safe migration order.
 
 ## Planned destination
 
-The planned source destinations are RazonWorks `/lab` and `/es/lab`. They are not implemented, deployed, or hosted by Phase 0. Do not describe them as live.
+RazonWorks `/lab` and `/es/lab` exist in local source as of 2026-08-10. This
+repository has not verified a preview or production deployment. Do not describe
+the routes as live.
 
-No standalone-domain redirect is authorized until both routes exist, their hosted English and Spanish behavior is verified, useful source material is preserved, and the user approves the cutover.
+No standalone-domain redirect is authorized until both routes are hosted,
+their English and Spanish behavior is verified there, useful source material
+is preserved, and the user approves the cutover.
 
 ## Hosting record and change control
 
@@ -35,12 +46,14 @@ The previous README recorded Vercel project `razonlab-site` and production domai
 
 Do not deploy, connect Git, change Vercel settings, alter DNS, delete the standalone source, or configure a redirect without explicit authorization. A local documentation change is not evidence of hosted state.
 
-## Phase 0 validation
+## Migration inventory validation
 
-For this documentation-only packet:
+For this source-inventory packet:
 
 ```bash
+node --test tests/migration-inventory.test.mjs
 git diff --check
 ```
 
-Build, browser, provider, DNS, redirect, and live-domain checks are not required because no runtime or external behavior changes in this phase.
+Build, browser, provider, DNS, redirect, and live-domain checks are not required
+because no runtime or external behavior changes in this slice.

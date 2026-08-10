@@ -58,23 +58,33 @@ Do not turn a local demonstration into a claim about production systems, populat
 
 ## Current repository status
 
-This repository contains a self-contained `index.html` for the existing Razon Live Lab presentation plus `favicon.png` and `og.png`. The current source mixes learning-in-public language, scheduled-stream claims, broad project links, and experimental topics. Phase 0 preserves that source for later inventory. It does not endorse every current statement as accurate or current.
+This repository contains a self-contained `index.html` for the existing Razon Live Lab presentation plus `favicon.png` and `og.png`. The current source mixes learning-in-public language, scheduled-stream claims, broad project links, and experimental topics. The runtime is preserved while its inventory is reviewed. Neither preservation nor inventory endorses every current statement as accurate or current.
+
+The migration inventory at
+`docs/migration/standalone-source-inventory.json` now pins the preserved source
+revision and runtime hashes, classifies each migration artifact, and keeps
+unverified schedule, channel, contact, and broadcast claims fail-closed. Its
+test does not verify those external claims.
 
 The hosting and domain details in the README are repository records. They were not live-verified by the documentation-only Phase 0 packet.
 
 ## Planned migration boundary
 
-- `RazonIn4K/razonworks` `/lab` and `/es/lab` are planned source destinations.
-- Phase 0 does not implement, deploy, or host those routes.
+- `RazonIn4K/razonworks` `/lab` and `/es/lab` exist in local source as of
+  2026-08-10. Their preview and production state remain unverified here.
+- Neither Phase 0 nor the standalone inventory deploys or hosts those routes.
 - `index.html`, assets, Vercel configuration, DNS, and the standalone domain remain unchanged.
-- No redirect from `razonlab.com` is authorized until both planned routes exist, English and Spanish behavior is verified in the hosted environment, useful source material is preserved, and the user approves the cutover.
+- No redirect from `razonlab.com` is authorized until both routes are hosted,
+  English and Spanish behavior is verified there, useful source material is
+  preserved, and the user approves the cutover.
 - A later archive or redirect must retain provenance for material that is not moved into the new Lab structure.
 
 ## Migration sequence
 
-1. Inventory current copy, claims, schedule information, links, metadata, structured data, and assets.
-2. Classify each useful item as preserve, rewrite, summarize, move, or retire.
-3. Implement paired RazonWorks Lab routes with the evidence contract above.
+1. Inventory current copy, claims, schedule information, links, metadata, structured data, and assets. Completed in local source on 2026-08-10.
+2. Classify each item as preserve, rewrite, retire, or verify. Completed in local source on 2026-08-10.
+3. Implement paired RazonWorks Lab routes with the evidence contract above. A
+   local source implementation exists; hosted verification remains pending.
 4. Validate language parity, accessibility, responsive layout, metadata, canonical behavior, robots rules, sitemap entries, and hosted behavior.
 5. Preserve archive-worthy standalone artifacts.
 6. Request explicit approval for domain or redirect changes.

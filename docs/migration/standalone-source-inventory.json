@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "inventoryDate": "2026-08-10",
+  "sourceRepository": "RazonIn4K/razonlab-site",
+  "sourceRevision": "4ee09a343c10f3ff5177f617193585640f067aab",
+  "targetRepository": "RazonIn4K/razonworks",
+  "targetRoutes": ["/lab", "/es/lab"],
+  "targetHostedState": "unverified",
+  "runtimeFiles": [
+    {
+      "path": "index.html",
+      "sha256": "86e0773d47c595f6c1e86ce56f9d929dd36f23a3e90fa4b6d55e5da5c4d9f34c"
+    },
+    {
+      "path": "favicon.png",
+      "sha256": "56c82827e2a7263bf96839da66c1947bbe0277e797673fb176a1af28dc85d205"
+    },
+    {
+      "path": "og.png",
+      "sha256": "11741e94806c6d95fb841d57be2306ab7ea7032e7aadaaaf11535e518db9be5f"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "metadata",
+      "kind": "metadata",
+      "source": "index.html head title, description, Open Graph, theme color, and favicon declarations",
+      "selectors": ["title", "meta[name=description]", "meta[property^=og]", "meta[name=theme-color]"],
+      "classification": "rewrite",
+      "destination": "Use route-specific Lab metadata without an unverified broadcast schedule or standalone canonical claim.",
+      "evidenceStatus": "source-observed",
+      "followUp": "Verify hosted RazonWorks canonicals and social assets before publishing or redirecting."
+    },
+    {
+      "id": "structured-identity",
+      "kind": "structured-data",
+      "source": "Organization, Person, and WebSite nodes in the JSON-LD graph",
+      "selectors": ["script[type=application/ld+json]"],
+      "classification": "rewrite",
+      "destination": "Model Razon Lab as the experimental arm of RazonWorks with only verified identity links.",
+      "evidenceStatus": "source-observed",
+      "followUp": "Review publisher, founder, job-title, sameAs, language, and ownership assertions against current evidence."
+    },
+    {
+      "id": "structured-broadcast",
+      "kind": "structured-data",
+      "source": "BroadcastEvent and Schedule nodes in the JSON-LD graph",
+      "selectors": ["script[type=application/ld+json]"],
+      "classification": "verify",
+      "destination": "Publish event schema only for a currently verified recurring or scheduled broadcast.",
+      "evidenceStatus": "claim-unverified",
+      "followUp": "Verify the stream exists, its service, days, times, timezone, and live status before preserving any event fields."
+    },
+    {
+      "id": "hero",
+      "kind": "visible-copy",
+      "source": "Hero name, bilingual tag, live-status line, description, and watch actions",
+      "selectors": ["section.hero"],
+      "classification": "rewrite",
+      "destination": "Explain the Lab evidence contract and lead with an inspectable experiment or artifact.",
+      "evidenceStatus": "source-observed",
+      "followUp": "Remove schedule and live-channel assertions unless independently verified."
+    },
+    {
+      "id": "schedule",
+      "kind": "visible-claim",
+      "source": "Monday-Friday 6:00-8:00 PM Central schedule and notification copy",
+      "selectors": ["#schedule", "section.hero p:nth-of-type(2)"],
+      "classification": "verify",
+      "destination": "Show a schedule only when its current source and owner are recorded.",
+      "evidenceStatus": "claim-unverified",
+      "followUp": "Verify current days, time, timezone, platform, and notification behavior."
+    },
+    {
+      "id": "stream-loop",
+      "kind": "method",
+      "source": "Question, initial model, attempt, abstraction check, failure, and updated-model loop",
+      "selectors": ["#schedule .flow", "#series .flow"],
+      "classification": "preserve",
+      "destination": "Adapt the six-step loop as a method field or experiment template, not proof that a broadcast occurred.",
+      "evidenceStatus": "source-observed",
+      "followUp": "Remove duplicated wording and localize the method completely in the paired routes."
+    },
+    {
+      "id": "safety-rule",
+      "kind": "policy-copy",
+      "source": "Public-proof and private-data operating rule",
+      "selectors": ["section.promise"],
+      "classification": "rewrite",
+      "destination": "Carry forward as a publication safety rule with explicit scope and enforcement guidance.",
+      "evidenceStatus": "source-observed",
+      "followUp": "Treat the source as a stated rule, not evidence that every historical stream complied."
+    },
+    {
+      "id": "channel-links",
+      "kind": "external-links",
+      "source": "YouTube, Twitch, X, and GitHub values in LINKS and sameAs arrays",
+      "selectors": ["script containing const LINKS", "#watch"],
+      "classification": "verify",
+      "destination": "Link only to channels whose current ownership, handle, and content purpose are verified.",
+      "evidenceStatus": "external-unverified",
+      "followUp": "Open each public URL, confirm owner and destination, and record the verification date."
+    },
+    {
+      "id": "related-directory",
+      "kind": "cross-property-directory",
+      "source": "PromptDefenders, High Encode Learning, CSBrain AI, and DavidTiz related-work cards",
+      "selectors": ["section containing .lane"],
+      "classification": "retire",
+      "destination": "Use contextual artifact links only; do not recreate a generic sibling-property directory.",
+      "evidenceStatus": "source-observed",
+      "followUp": "Preserve only a link that materially helps interpret a specific experiment."
+    },
+    {
+      "id": "contact",
+      "kind": "contact-channel",
+      "source": "hello@razonlab.com and broad work, collaboration, and question invitation",
+      "selectors": ["#contact", "footer"],
+      "classification": "verify",
+      "destination": "Use a verified Lab-specific research contact or omit the action.",
+      "evidenceStatus": "external-unverified",
+      "followUp": "Verify mailbox ownership, delivery, retention, response expectations, and portfolio routing."
+    },
+    {
+      "id": "navigation",
+      "kind": "information-architecture",
+      "source": "Watch, Schedule, Series, and Contact in-page navigation",
+      "selectors": ["header.nav nav"],
+      "classification": "rewrite",
+      "destination": "Prioritize records, method, evidence status, limitations, artifacts, and next test.",
+      "evidenceStatus": "source-observed",
+      "followUp": "Map labels separately for English and Spanish after the integrated route content is final."
+    },
+    {
+      "id": "favicon",
+      "kind": "asset",
+      "source": "favicon.png",
+      "selectors": ["link[rel=icon]", "header img", "footer img"],
+      "classification": "preserve",
+      "destination": "Retain as a provenance asset until the RazonWorks identity review decides its final use.",
+      "evidenceStatus": "asset-hash-observed",
+      "followUp": "Check contrast, sizes, license, and integrated-brand fit before publication."
+    },
+    {
+      "id": "social-image",
+      "kind": "asset",
+      "source": "og.png",
+      "selectors": ["meta[property=og\\:image]"],
+      "classification": "rewrite",
+      "destination": "Create route-owned Lab social art only after title and evidence framing are approved.",
+      "evidenceStatus": "asset-hash-observed",
+      "followUp": "Preserve the original digest for provenance and verify the replacement at 1200 x 630."
+    },
+    {
+      "id": "analytics-placeholder",
+      "kind": "operational-placeholder",
+      "source": "Final HTML comment suggesting a future analytics snippet",
+      "selectors": ["final Analytics HTML comment"],
+      "classification": "retire",
+      "destination": "Use only RazonWorks-approved analytics with its existing consent and evidence contracts.",
+      "evidenceStatus": "source-observed",
+      "followUp": "Do not infer that Cloudflare Web Analytics or Plausible is installed from the placeholder."
+    }
+  ]
+}
