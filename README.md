@@ -1,18 +1,46 @@
-# Razon Live Lab (razonlab.com)
+# Razon Lab Migration Source
 
-Static site for Razon Live Lab. One self-contained HTML file, no build step.
+This repository preserves the standalone Razon Live Lab source while useful material is evaluated for migration. The selected portfolio role is Razon Lab, the experimental research and prototyping arm of RazonWorks.
+
+The repository remains a static site with one self-contained HTML file and no build step. Phase 0 changes documentation only. It does not change the public site, hosting, domain, or redirect behavior.
+
+## Brand role
+
+- **Audience:** technical peers, builders, and security researchers.
+- **Job:** make an experiment, benchmark, writeup, or demo inspectable.
+- **Proof:** method, environment, observations, limitations, evidence status, and reproducible artifacts.
+- **Not owned here:** commercial services and client intake, beginner curriculum, or David's personal portfolio and contact hub.
+
+RazonWorks owns commercial services and client intake. High Encode Learning owns education. DavidTiz owns personal identity and curated proof. Full experimental research artifacts belong to Razon Lab as part of RazonWorks.
+
+The canonical portfolio decision and contract live in the `RazonIn4K/razonworks` repository at `docs/adr/0038-portfolio-brand-and-content-ownership.md`, `docs/brand/portfolio-charter.md`, and `docs/brand/content-ownership-ledger.md`. Read [docs/BRAND-BOUNDARY.md](docs/BRAND-BOUNDARY.md) for the local evidence and migration rules.
 
 ## Files
 
-- `index.html` - the entire site (inline CSS, link config in the `LINKS` script at the top of `<body>`)
-- `favicon.png` - logo / favicon
-- `og.png` - social share image (1200x630)
+- `index.html`: the preserved standalone site, including inline CSS, metadata, structured data, visible copy, and the `LINKS` configuration.
+- `favicon.png`: current logo and favicon.
+- `og.png`: current 1200 x 630 social preview image.
+- `docs/BRAND-BOUNDARY.md`: target brand contract, evidence standard, and migration guardrails.
+- `AGENTS.md`: contributor instructions and safe migration order.
 
-## Deploying
+## Planned destination
 
-Hosted on Vercel, project `razonlab-site`, production domain `razonlab.com`.
+The planned source destinations are RazonWorks `/lab` and `/es/lab`. They are not implemented, deployed, or hosted by Phase 0. Do not describe them as live.
 
-This repo is not yet connected to Vercel for push-to-deploy. Either:
+No standalone-domain redirect is authorized until both routes exist, their hosted English and Spanish behavior is verified, useful source material is preserved, and the user approves the cutover.
 
-1. `vercel --prod` from this folder (CLI), or
-2. Link this repo in the Vercel dashboard: Project Settings > Git > Connect, then every push to `main` deploys.
+## Hosting record and change control
+
+The previous README recorded Vercel project `razonlab-site` and production domain `razonlab.com`, and stated that the repository was not connected for push-to-deploy. Those details were not live-verified during Phase 0.
+
+Do not deploy, connect Git, change Vercel settings, alter DNS, delete the standalone source, or configure a redirect without explicit authorization. A local documentation change is not evidence of hosted state.
+
+## Phase 0 validation
+
+For this documentation-only packet:
+
+```bash
+git diff --check
+```
+
+Build, browser, provider, DNS, redirect, and live-domain checks are not required because no runtime or external behavior changes in this phase.
