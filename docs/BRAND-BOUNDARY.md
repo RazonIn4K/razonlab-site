@@ -4,7 +4,7 @@
 
 ## Authority
 
-The canonical portfolio decision and contract live in the RazonWorks repository at `RazonIn4K/razonworks/docs/adr/0038-portfolio-brand-and-content-ownership.md`, `RazonIn4K/razonworks/docs/brand/portfolio-charter.md`, and `RazonIn4K/razonworks/docs/brand/content-ownership-ledger.md`. This repository's local boundary must not contradict them. If the documents conflict, pause public changes and reconcile the canonical decision and local boundary together before implementation.
+The canonical portfolio decision and contract live in the RazonWorks repository at `RazonIn4K/razonworks/docs/adr/0039-portfolio-brand-and-content-ownership.md`, `RazonIn4K/razonworks/docs/brand/portfolio-charter.md`, and `RazonIn4K/razonworks/docs/brand/content-ownership-ledger.md`. This repository's local boundary must not contradict them. If the documents conflict, pause public changes and reconcile the canonical decision and local boundary together before implementation.
 
 ## Brand contract
 

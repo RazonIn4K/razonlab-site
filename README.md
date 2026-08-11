@@ -16,7 +16,7 @@ or redirect behavior.
 
 RazonWorks owns commercial services and client intake. High Encode Learning owns education. DavidTiz owns personal identity and curated proof. Full experimental research artifacts belong to Razon Lab as part of RazonWorks.
 
-The canonical portfolio decision and contract live in the `RazonIn4K/razonworks` repository at `docs/adr/0038-portfolio-brand-and-content-ownership.md`, `docs/brand/portfolio-charter.md`, and `docs/brand/content-ownership-ledger.md`. Read [docs/BRAND-BOUNDARY.md](docs/BRAND-BOUNDARY.md) for the local evidence and migration rules.
+The canonical portfolio decision and contract live in the `RazonIn4K/razonworks` repository at `docs/adr/0039-portfolio-brand-and-content-ownership.md`, `docs/brand/portfolio-charter.md`, and `docs/brand/content-ownership-ledger.md`. Read [docs/BRAND-BOUNDARY.md](docs/BRAND-BOUNDARY.md) for the local evidence and migration rules.
 
 ## Files
 

@@ -8,7 +8,7 @@ This repository preserves the standalone Razon Live Lab source while its useful 
 
 Razon Lab serves technical peers, builders, and security researchers who want to inspect an experiment, benchmark, writeup, or demo. Its proof comes from methods, environments, observations, limitations, and reproducible artifacts. It is not a commercial intake site, a beginner course catalog, a general creator directory, or a second personal portfolio.
 
-The canonical portfolio decision and contract live in the RazonWorks repository at `RazonIn4K/razonworks/docs/adr/0038-portfolio-brand-and-content-ownership.md`, `RazonIn4K/razonworks/docs/brand/portfolio-charter.md`, and `RazonIn4K/razonworks/docs/brand/content-ownership-ledger.md`. This repository's local boundary must not contradict them. If the documents conflict, pause public changes and reconcile the canonical decision and local boundary together before implementation.
+The canonical portfolio decision and contract live in the RazonWorks repository at `RazonIn4K/razonworks/docs/adr/0039-portfolio-brand-and-content-ownership.md`, `RazonIn4K/razonworks/docs/brand/portfolio-charter.md`, and `RazonIn4K/razonworks/docs/brand/content-ownership-ledger.md`. This repository's local boundary must not contradict them. If the documents conflict, pause public changes and reconcile the canonical decision and local boundary together before implementation.
 
 Read [docs/BRAND-BOUNDARY.md](docs/BRAND-BOUNDARY.md) before changing content, links, hosting, or migration plans.
 
