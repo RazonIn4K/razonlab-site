@@ -37,6 +37,8 @@ migration rules.
   downscaled and losslessly optimized locally. The generated visual contains
   no third-party media, people, customer material, or externally licensed
   assets. The recorded provenance does not replace final publication approval.
+- `robots.txt`: public crawler policy with one canonical sitemap reference.
+- `sitemap.xml`: one-entry sitemap containing only `https://razonlab.com/`.
 - `docs/BRAND-BOUNDARY.md`: target brand contract, evidence standard, and migration guardrails.
 - `docs/migration/standalone-source-inventory.json`: source revision, runtime
   hashes, artifact classifications, and required follow-up evidence.
@@ -44,6 +46,8 @@ migration rules.
   integrity checks.
 - `tests/source-boundary.test.mjs`: public-copy, schema, link, discovery, and
   social-image boundary checks.
+- `tests/discovery-files.test.mjs`: crawler policy, sitemap syntax, and
+  standalone-canonical boundary checks.
 - `AGENTS.md`: contributor instructions and safe migration order.
 
 ## Verified external destinations
@@ -87,4 +91,6 @@ git diff --check
 ```
 
 Inspect `index.html` at 320, 390, 768, and 1440 CSS pixels before publication.
+Serve `robots.txt` and `sitemap.xml` locally and verify their response content
+types and exact bodies when they change.
 Provider, DNS, redirect, and live-domain state remain separately unverified.

@@ -22,6 +22,8 @@ index.html   Current standalone site, including HTML, inline CSS, metadata,
              structured data, visible copy, and bounded navigation.
 favicon.png Current logo and favicon asset.
 og.png      Current social preview image.
+robots.txt  Public crawler policy and canonical sitemap pointer.
+sitemap.xml One-entry sitemap for the standalone canonical URL.
 README.md   Repository status, change-control rules, and migration boundary.
 ```
 
@@ -98,6 +100,8 @@ node --test tests/*.test.mjs
 git diff --check
 ```
 
-Inspect the source at 390, 768, and 1440 CSS pixels when runtime files change.
+Inspect the source at 390, 768, and 1440 CSS pixels when page runtime files change.
+Serve discovery files locally and verify their response content types and bodies
+when `robots.txt` or `sitemap.xml` changes.
 Record provider, Vercel, DNS, redirect, and live-domain checks as not run unless
 they were separately authorized and completed.

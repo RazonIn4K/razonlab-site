@@ -63,13 +63,15 @@ Do not turn a local demonstration into a claim about production systems, populat
 
 ## Current repository status
 
-This repository contains a self-contained `index.html`, `favicon.png`, and
-`og.png`. The current source candidate identifies Razon Lab as an evidence-led
+This repository contains a self-contained `index.html`, `favicon.png`,
+`og.png`, `robots.txt`, and `sitemap.xml`. The current source candidate
+identifies Razon Lab as an evidence-led
 experiment ledger, exposes the evidence contract, and presents an explicit
 zero-record state. It retires learning-in-public, recurring availability,
 generic channel-directory, broad contact, and unsupported identity-schema
 claims. It restores only channel destinations verified on 2026-08-12 and keeps
-the sibling-site links classification-neutral.
+the sibling-site links classification-neutral. Its crawler policy and sitemap
+publish only the standalone `https://razonlab.com/` canonical.
 
 The source inventory at
 `docs/migration/standalone-source-inventory.json` now pins the preserved source
