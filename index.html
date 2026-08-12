@@ -3,15 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Razon Live Lab: Raw dogging programming, live Mon-Fri 6-8 PM CT</title>
-<meta name="description" content="Learning programming in public, live on Twitch Mon-Fri 6-8 PM CT. Raw dogging programming: no hiding behind the abstractions. By David Ortiz / Razon. EN / ES.">
+<title>Razon Live Lab: Study, build, and secure AI systems</title>
+<meta name="description" content="Public-safe programming and AI systems work by David Ortiz / Razon: working sessions, build notes, and honest explanations in English and Spanish.">
 <meta name="theme-color" content="#0e1116">
 <link rel="icon" type="image/png" href="favicon.png">
+<link rel="canonical" href="https://razonlab.com/">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Razon Live Lab: Raw dogging programming, live Mon-Fri 6-8 PM CT">
-<meta property="og:description" content="Learning programming in public. Live on Twitch Mon-Fri 6-8 PM CT. Aprendiendo a programar en publico. EN / ES.">
-<meta property="og:url" content="https://razonlab.com">
+<meta property="og:title" content="Razon Live Lab: Study, build, and secure AI systems">
+<meta property="og:description" content="Public-safe programming and AI systems work, working sessions, build notes, and honest explanations. EN / ES.">
+<meta property="og:url" content="https://razonlab.com/">
 <!-- og:image: 1200x630 banner -->
 <meta property="og:image" content="https://razonlab.com/og.png">
 <!-- Structured data for search engines -->
@@ -23,10 +24,10 @@
       "@type": "Organization",
       "@id": "https://razonlab.com/#org",
       "name": "Razon Live Lab",
-      "url": "https://razonlab.com",
+      "url": "https://razonlab.com/",
       "logo": "https://razonlab.com/favicon.png",
       "image": "https://razonlab.com/og.png",
-      "description": "Learning-in-public lab by David Ortiz (Razon). Raw Dogging Programming: learning programming from the ground up, live on Twitch, Monday to Friday 6:00-8:00 PM Central. EN / ES.",
+      "description": "Public-safe programming and AI systems work by David Ortiz (Razon), with working sessions, build notes, and honest explanations in English and Spanish.",
       "founder": { "@id": "https://razonlab.com/#david" },
       "sameAs": [
         "https://youtube.com/@razonlab",
@@ -41,7 +42,7 @@
       "@id": "https://razonlab.com/#david",
       "name": "David Ortiz",
       "alternateName": "Razon",
-      "url": "https://razonlab.com",
+      "url": "https://razonlab.com/",
       "jobTitle": "AI Automation & Security Engineer",
       "worksFor": { "@id": "https://razonlab.com/#org" },
       "knowsLanguage": ["en", "es"],
@@ -56,26 +57,10 @@
     {
       "@type": "WebSite",
       "@id": "https://razonlab.com/#website",
-      "url": "https://razonlab.com",
+      "url": "https://razonlab.com/",
       "name": "Razon Live Lab",
       "publisher": { "@id": "https://razonlab.com/#org" },
       "inLanguage": ["en", "es"]
-    },
-    {
-      "@type": "BroadcastEvent",
-      "@id": "https://razonlab.com/#stream",
-      "name": "Raw Dogging Programming (live stream)",
-      "description": "Learning programming without hiding behind the abstractions. Live Monday to Friday, 6:00-8:00 PM Central (CT).",
-      "isLiveBroadcast": true,
-      "publishedOn": { "@type": "BroadcastService", "name": "Twitch", "url": "https://twitch.tv/razonlab" },
-      "eventSchedule": {
-        "@type": "Schedule",
-        "byDay": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday"],
-        "startTime": "18:00",
-        "endTime": "20:00",
-        "scheduleTimezone": "America/Chicago"
-      },
-      "organizer": { "@id": "https://razonlab.com/#david" }
     }
   ]
 }
@@ -94,8 +79,12 @@
     line-height:1.55; -webkit-font-smoothing:antialiased;
   }
   a{color:inherit}
+  a:focus-visible{outline:3px solid var(--amber); outline-offset:3px; border-radius:4px}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 22px}
   .eyebrow{color:var(--teal); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:.78rem}
+  .skip-link{position:absolute; top:-80px; left:12px; z-index:30; padding:10px 14px; border-radius:8px;
+    background:var(--teal); color:#06231f; font-weight:800; text-decoration:none}
+  .skip-link:focus{top:10px}
   /* nav */
   header.nav{position:sticky; top:0; z-index:20; backdrop-filter:blur(8px);
     background:rgba(14,17,22,.82); border-bottom:1px solid var(--line)}
@@ -105,7 +94,11 @@
     display:grid;place-items:center;color:#06231f;font-weight:900;font-size:14px}
   .nav nav{display:flex; gap:20px; font-size:.92rem; color:var(--muted)}
   .nav nav a:hover{color:var(--ink)}
-  @media(max-width:640px){ .nav nav{display:none} }
+  @media(max-width:640px){
+    .nav .wrap{height:auto; min-height:62px; flex-wrap:wrap; gap:4px; padding-top:10px; padding-bottom:10px}
+    .nav nav{width:100%; justify-content:space-between; gap:12px; overflow-x:auto; padding-bottom:2px}
+    .nav nav a{padding:5px 0; white-space:nowrap}
+  }
   /* hero */
   .hero{padding:74px 0 30px; background:
     radial-gradient(900px 420px at 78% -8%, rgba(45,212,191,.13), transparent 60%),
@@ -121,7 +114,7 @@
   .btn.ghost{background:var(--card); color:var(--ink)}
   .btn.amber{background:transparent; color:var(--amber); border-color:rgba(242,163,94,.5)}
   /* sections */
-  section{padding:46px 0}
+  section{padding:46px 0; scroll-margin-top:76px}
   h2{font-size:clamp(1.5rem,3.2vw,2rem); margin:.2rem 0 1.2rem; letter-spacing:-.01em}
   .sub{color:var(--muted); max-width:62ch; margin:-.6rem 0 1.4rem}
   /* promise */
@@ -153,9 +146,17 @@
   footer{border-top:1px solid var(--line); color:var(--muted); padding:30px 0 50px; font-size:.9rem}
   footer .wrap{display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap}
   .es{color:var(--muted); font-style:italic}
+  @media(max-width:640px){section{scroll-margin-top:116px}}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .btn,.watch a.card{transition:none}
+    .btn:hover,.watch a.card:hover{transform:none}
+  }
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <!-- ============================================================
      EDIT THESE LINKS, THEN DEPLOY. Everything below reads from here.
@@ -173,26 +174,27 @@
 <header class="nav">
   <div class="wrap">
     <div class="logo"><img src="favicon.png" alt="Razon Live Lab" style="width:30px;height:30px;border-radius:8px"> Razon Live Lab</div>
-    <nav>
-      <a href="#watch">Watch</a>
-      <a href="#schedule">Schedule</a>
+    <nav aria-label="Primary">
+      <a href="#watch">Channels</a>
+      <a href="#schedule">Format</a>
       <a href="#series">Series</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
+<main id="main-content">
 <section class="hero">
   <div class="wrap">
     <div class="eyebrow">Razon Live Lab</div>
-    <h1>Study, build, and secure AI&nbsp;systems live.</h1>
-    <p class="tag">Estudia, construye y asegura sistemas de IA en vivo. <span class="es">EN / ES.</span></p>
-    <p style="color:var(--ink);font-weight:700;margin:0 0 1rem"><span style="color:var(--teal)">●</span> Live Mon-Fri 6-8 PM CT on Twitch <span class="es">· En vivo lun-vie 6-8 PM CT</span></p>
-    <p class="lede">Learning programming from the ground up, live. Deep-work sessions and honest builds by David Ortiz / Razon.</p>
+    <h1>Study, build, and secure AI&nbsp;systems in public.</h1>
+    <p class="tag">Estudia, construye y asegura sistemas de IA en público. <span class="es">EN / ES.</span></p>
+    <p style="color:var(--ink);font-weight:700;margin:0 0 1rem"><span style="color:var(--teal)">●</span> Check the linked channels for the current schedule and availability.</p>
+    <p class="lede">Programming from the ground up, shared in public. Deep-work sessions and honest builds by David Ortiz / Razon.</p>
     <div class="btns">
-      <a class="btn primary" data-link="twitch" href="#">▶ Watch on Twitch</a>
-      <a class="btn ghost" data-link="youtube" href="#">Watch on YouTube</a>
-      <a class="btn ghost" data-link="x" href="#">Follow on X</a>
+      <a class="btn primary" data-link="twitch" href="#">Open Twitch</a>
+      <a class="btn ghost" data-link="youtube" href="#">Open YouTube</a>
+      <a class="btn ghost" data-link="x" href="#">Open X</a>
     </div>
   </div>
 </section>
@@ -201,7 +203,7 @@
   <div class="wrap">
     <div class="card">
       <div class="eyebrow">Operating rule</div>
-      <h3 style="font-size:1.3rem;margin:.4rem 0 .5rem"><strong>Public proof, private data protected.</strong></h3>
+      <h2 style="font-size:1.3rem;margin:.4rem 0 .5rem"><strong>Public proof, private data protected.</strong></h2>
       <p style="color:var(--muted);margin:0">I do not show client, school, private, or production data on stream. Demos use public-safe notes, dummy data, sandbox accounts, demo repos, and test-mode tools.</p>
     </div>
   </div>
@@ -209,22 +211,22 @@
 
 <section id="watch">
   <div class="wrap">
-    <div class="eyebrow">Where to watch</div>
-    <h2>Catch the stream</h2>
+    <div class="eyebrow">Channels</div>
+    <h2>Follow the work</h2>
     <div class="grid g3 watch">
-      <a class="card" data-link="youtube" href="#"><div class="plat">YouTube</div><div class="h">youtube.com/@razonlab</div><p style="margin-top:8px">Full streams, AI News Desk recaps, and build VODs.</p></a>
-      <a class="card" data-link="twitch" href="#"><div class="plat">Twitch</div><div class="h">twitch.tv/razonlab</div><p style="margin-top:8px">Live deep-work blocks and real-time Q&amp;A.</p></a>
-      <a class="card" data-link="x" href="#"><div class="plat">X</div><div class="h">x.com/Razonapp</div><p style="margin-top:8px">Clips, threads, and go-live announcements.</p></a>
+      <a class="card" data-link="youtube" href="#"><div class="plat">YouTube</div><div class="h">youtube.com/@razonlab</div><p style="margin-top:8px">Check the channel for current uploads and archives.</p></a>
+      <a class="card" data-link="twitch" href="#"><div class="plat">Twitch</div><div class="h">twitch.tv/razonlab</div><p style="margin-top:8px">Check the channel for current streams and availability.</p></a>
+      <a class="card" data-link="x" href="#"><div class="plat">X</div><div class="h">x.com/Razonapp</div><p style="margin-top:8px">Check the profile for current notes and announcements.</p></a>
     </div>
   </div>
 </section>
 
 <section id="schedule" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
-    <div class="eyebrow">Schedule</div>
-    <h2>Live Mon-Fri, 6:00-8:00 PM Central (CT)</h2>
-    <p style="margin:-6px 0 10px;color:var(--muted)"><span class="es">En vivo de lunes a viernes, 6:00-8:00 PM, hora del Centro (CT).</span></p>
-    <p style="margin:6px 0 14px;color:var(--muted)">Live on <a data-link="twitch" href="#">Twitch</a>, with VODs and explainers on <a data-link="youtube" href="#">YouTube</a>. Follow on <a data-link="twitch" href="#">Twitch</a> to get notified when the stream goes live.</p>
+    <div class="eyebrow">Format</div>
+    <h2>A repeatable build-and-review loop</h2>
+    <p style="margin:-6px 0 10px;color:var(--muted)"><span class="es">Un ciclo repetible para construir, revisar y explicar.</span></p>
+    <p style="margin:6px 0 14px;color:var(--muted)">Schedules change. Use the linked channels above to check current availability.</p>
     <h3 style="margin:18px 0 10px">Typical format</h3>
     <div class="flow">
       <span class="pill"><b>1</b> · Starting Soon + Today's Question</span>
@@ -242,7 +244,7 @@
     <div class="eyebrow">The series</div>
     <h2>Raw Dogging Programming</h2>
     <p class="sub" style="color:var(--ink);font-weight:600;max-width:none">Learning programming without hiding behind the abstractions.<br><span class="es">Aprendiendo a programar sin esconderme detras de las abstracciones.</span></p>
-    <p class="sub">I'm learning programming from the ground up, live. No pretending I understand an abstraction until I can explain it without looking. Each session follows the same loop:</p>
+    <p class="sub">I'm learning programming from the ground up in public. No pretending I understand an abstraction until I can explain it without looking. Each working session follows the same loop:</p>
     <div class="flow">
       <span class="pill"><b>1</b> · Question</span>
       <span class="pill"><b>2</b> · Initial model</span>
@@ -260,9 +262,9 @@
     <h2>Related work by David</h2>
     <div class="grid g2">
       <div class="card lane"><h3>PromptDefenders</h3><p>AI security, prompt-injection defense, and agent-safety templates.</p></div>
-      <div class="card lane"><h3>High Encode Learning</h3><p>The commercial studio: local-business websites, automations, and lead capture.</p></div>
+      <div class="card lane"><h3>High Encode Learning</h3><p>Practical learning paths, tutorials, and guided practice for AI, automation, cloud, security, and business systems.</p></div>
       <div class="card lane"><h3>CSBrain AI</h3><p>Public notes, mind maps, and RAG experiments.</p></div>
-      <div class="card lane"><h3>DavidTiz</h3><p>Portfolio and commercial work. Hiring inquiries go here. <a data-link="davidtiz" href="#" style="color:var(--teal);text-decoration:none">davidtiz.com →</a></p></div>
+      <div class="card lane"><h3>DavidTiz</h3><p>David Ortiz's personal portfolio and selected proof. Employment, collaboration, speaking, and peer contact belong there. <a data-link="davidtiz" href="#" style="color:var(--teal);text-decoration:none">davidtiz.com →</a></p></div>
     </div>
   </div>
 </section>
@@ -271,18 +273,20 @@
   <div class="wrap">
     <div class="card">
       <div class="eyebrow">Contact</div>
-      <h2 style="margin:.4rem 0 .3rem">For work, collabs, or questions</h2>
+      <h2 style="margin:.4rem 0 .3rem">For research collaboration or questions</h2>
       <p style="color:var(--muted);margin:0 0 .6rem">Drop a line. I read everything.</p>
       <a href="mailto:hello@razonlab.com">hello@razonlab.com</a>
     </div>
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="wrap">
     <div>
       <div class="logo" style="margin-bottom:6px"><img src="favicon.png" alt="Razon Live Lab" style="width:30px;height:30px;border-radius:8px"> Razon Live Lab</div>
-      <div>Study, build, and secure AI systems live. <span class="es">EN / ES.</span></div>
+      <div>Study, build, and secure AI systems in public. <span class="es">EN / ES.</span></div>
     </div>
     <div style="text-align:right">
       <div>by David Ortiz / Razon</div>
