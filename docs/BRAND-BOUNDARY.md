@@ -32,12 +32,18 @@ The canonical portfolio decision and contract live in the RazonWorks repository 
 - David's full personal story, broad portfolio, employment pitch, or personal contact hub;
 - unsupported claims, generic trend commentary, or hype presented as a result.
 
-## Portfolio routing
+## Public-surface routing
 
-- Send commercial service and project-intake needs to RazonWorks.
-- Send structured learning, tutorials, exercises, and learner support to High Encode Learning.
-- Send David's personal role, judgment, curated proof, and personal contact to DavidTiz.
+- Send commercial service and project-request needs to the current RazonWorks request surface.
+- Describe High Encode Learning only as the current learning surface for structured lessons and guided practice.
+- Send David's personal role, judgment, curated proof, collaboration, speaking, and peer context to DavidTiz.
 - Keep the full experiment record with Razon Lab. Other properties may summarize it for their audience and link to the canonical artifact.
+
+The legal and public identity relationship between RazonWorks and High Encode
+Learning remains unresolved in the current operating system. This repository
+must not infer or publish an entity, DBA, payment, contract, domain-ownership,
+or replacement relationship. The explicit Razon Lab relationship to
+RazonWorks does not settle that separate question.
 
 No property should clone a full Lab report. A RazonWorks service case may cite the experiment that informed a decision, High Encode may teach established knowledge derived from it, and DavidTiz may explain David's role or judgment. Those are summaries for different visitor jobs, not duplicate reports.
 
@@ -61,15 +67,19 @@ Do not turn a local demonstration into a claim about production systems, populat
 This repository contains a self-contained `index.html`, `favicon.png`, and
 `og.png`. The current source candidate identifies Razon Lab as the experimental
 research arm of RazonWorks, exposes the evidence contract, and presents an
-explicit zero-record state. It retires learning-in-public, recurring schedule,
-channel-directory, broad contact, and unsupported identity-schema claims.
+explicit zero-record state. It retires learning-in-public, recurring
+availability, generic channel-directory, broad contact, and unsupported
+identity-schema claims. It restores only channel destinations verified on
+2026-08-12 and a bounded personal, commercial, and learning intent router.
 
 The migration inventory at
 `docs/migration/standalone-source-inventory.json` now pins the preserved source
 revision and runtime hashes, classifies each migration artifact, and keeps
 the preserved Phase 0 digests separate from candidate runtime digests. The
-inventory and source tests keep unverified schedule, channel, contact, and
-broadcast claims fail-closed; they do not verify external systems.
+inventory and source tests keep recurring availability, unverified contact, and
+broadcast claims fail-closed. Current destination checks establish URL and
+public-metadata identity only; they do not verify cadence, post content, or
+future availability.
 
 The hosting and domain details in the README are repository records. They were not live-verified by the documentation-only Phase 0 packet.
 

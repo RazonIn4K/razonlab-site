@@ -42,6 +42,7 @@ const allowedClassifications = new Set([
 const allowedEvidenceStatuses = new Set([
   "source-observed",
   "asset-hash-observed",
+  "external-observed",
   "external-unverified",
   "claim-unverified",
 ]);
@@ -95,6 +96,34 @@ test("matches every local source candidate file to its recorded digest", async (
   }
 });
 
+test("records the bounded external-link verification", () => {
+  assert.deepEqual(
+    inventory.candidateExternalLinks.map((link) => link.id),
+    ["youtube", "twitch", "x", "personal", "commercial", "learning"],
+  );
+  assert.deepEqual(
+    inventory.candidateExternalLinks.map((link) => link.url),
+    [
+      "https://www.youtube.com/@razonlab",
+      "https://www.twitch.tv/razonlab",
+      "https://x.com/Razonapp",
+      "https://davidtiz.com/",
+      "https://razonworks.com/request",
+      "https://highencodelearning.com/",
+    ],
+  );
+
+  for (const link of inventory.candidateExternalLinks) {
+    assert.equal(link.verifiedAt, "2026-08-12");
+    assert.equal(link.evidenceStatus, "external-observed");
+    assert.ok(link.publicIdentity.trim());
+    assert.ok(link.claimBoundary.trim());
+  }
+
+  const learning = inventory.candidateExternalLinks.find((link) => link.id === "learning");
+  assert.match(learning.claimBoundary, /no relationship to RazonWorks is asserted/i);
+});
+
 test("classifies every required source artifact with a fail-closed follow-up", () => {
   const ids = inventory.artifacts.map((artifact) => artifact.id);
   assert.equal(new Set(ids).size, ids.length, "artifact IDs must be unique");
@@ -116,14 +145,15 @@ test("applies the canonical dispositions to schedules, channels, contact, and br
     inventory.artifacts.map((artifact) => [artifact.id, artifact]),
   );
 
-  for (const id of ["schedule", "channel-links", "contact", "structured-broadcast"]) {
+  for (const id of ["schedule", "contact", "structured-broadcast"]) {
     assert.match(artifacts[id].evidenceStatus, /unverified$/);
   }
 
   assert.equal(artifacts["schedule"].classification, "retire");
   assert.equal(artifacts["structured-broadcast"].classification, "retire");
   assert.equal(artifacts["contact"].classification, "rewrite");
-  assert.equal(artifacts["channel-links"].classification, "verify");
+  assert.equal(artifacts["channel-links"].classification, "rewrite");
+  assert.equal(artifacts["channel-links"].evidenceStatus, "external-observed");
   assert.equal(artifacts["related-directory"].classification, "retire");
   assert.equal(artifacts["stream-loop"].classification, "preserve");
 

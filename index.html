@@ -117,6 +117,9 @@
   .card .number{display:block; margin-bottom:18px; color:var(--amber); font-size:.82rem; font-weight:850; letter-spacing:.1em}
   .card h3{margin:0 0 .45rem; font-size:1.1rem}
   .card p{margin:0; color:var(--muted); font-size:.95rem}
+  .destination-card{display:block; text-decoration:none; transition:border-color .15s ease,transform .15s ease}
+  .destination-card:hover{border-color:var(--teal); transform:translateY(-2px)}
+  .destination-card .destination{display:block; margin-top:14px; color:var(--teal); font-size:.88rem; font-weight:800}
   .field-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; padding:0; margin:26px 0 0; list-style:none}
   .field-grid li{min-height:138px; padding:18px; border:1px solid var(--line); border-radius:14px; background:var(--card2)}
   .field-grid strong{display:block; margin-bottom:7px; color:var(--teal)}
@@ -154,7 +157,11 @@
     .nav nav{display:grid; grid-template-columns:1fr 1fr; gap:5px 12px; font-size:.78rem}
     .nav nav a{white-space:normal}
   }
-  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .destination-card{transition:none}
+    .destination-card:hover{transform:none}
+  }
 </style>
 </head>
 <body>
@@ -167,9 +174,10 @@
       <span>Razon Lab</span>
     </a>
     <nav aria-label="Primary">
-      <a href="#scope">Research boundary</a>
-      <a href="#method">Publication standard</a>
-      <a href="#records">Experiment log</a>
+      <a href="#method">Method</a>
+      <a href="#records">Records</a>
+      <a href="#channels">Channels</a>
+      <a href="#routing">Next step</a>
     </nav>
   </div>
 </header>
@@ -274,6 +282,56 @@
       </div>
     </div>
   </section>
+
+  <section class="alt" id="channels">
+    <div class="wrap">
+      <div class="eyebrow">Current public channels</div>
+      <h2>Working notes can be public without becoming evidence.</h2>
+      <p class="intro">These are the current Razon Live Lab channel destinations. Each platform is the source for its own availability. A stream, upload, or post enters the experiment ledger only after it meets the publication standard above.</p>
+      <div class="grid three">
+        <a class="card destination-card" href="https://www.youtube.com/@razonlab" target="_blank" rel="noopener noreferrer">
+          <h3>YouTube</h3>
+          <p>Razon Live Lab channel.</p>
+          <span class="destination">Open YouTube ↗</span>
+        </a>
+        <a class="card destination-card" href="https://www.twitch.tv/razonlab" target="_blank" rel="noopener noreferrer">
+          <h3>Twitch</h3>
+          <p>RazonLab channel.</p>
+          <span class="destination">Open Twitch ↗</span>
+        </a>
+        <a class="card destination-card" href="https://x.com/Razonapp" target="_blank" rel="noopener noreferrer">
+          <h3>X</h3>
+          <p>Razon Live Lab at @Razonapp.</p>
+          <span class="destination">Open X ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="routing">
+    <div class="wrap">
+      <div class="eyebrow">Intent routing</div>
+      <h2>Use the front door that matches the question.</h2>
+      <p class="intro">These links keep personal, commercial, and learning requests out of the experiment record. They describe the current public surfaces without making a legal, payment, or ownership inference.</p>
+      <div class="grid three">
+        <a class="card destination-card" href="https://davidtiz.com/">
+          <h3>DavidTiz</h3>
+          <p>David Ortiz's personal portfolio and context for collaboration, speaking, and peer work.</p>
+          <span class="destination">Open the personal portfolio ↗</span>
+        </a>
+        <a class="card destination-card" href="https://razonworks.com/request">
+          <h3>RazonWorks</h3>
+          <p>Commercial services and a scoped project request.</p>
+          <span class="destination">Request a consultation ↗</span>
+        </a>
+        <a class="card destination-card" href="https://highencodelearning.com/">
+          <h3>High Encode Learning</h3>
+          <p>Structured lessons and guided practice grounded in real builds.</p>
+          <span class="destination">Open the learning surface ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -285,7 +343,7 @@
       </a>
       <p>The experimental research arm of RazonWorks. The standalone domain remains an evidence-led Lab surface; it is not a service, course, or personal-portfolio directory.</p>
     </div>
-    <a class="owner-link" href="https://razonworks.com/">RazonWorks ↗</a>
+    <a class="owner-link" href="https://razonworks.com/request">Commercial requests ↗</a>
   </div>
 </footer>
 </body>

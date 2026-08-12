@@ -11,6 +11,56 @@
   "candidateDeploymentAuthorized": false,
   "candidateRedirectAuthorized": false,
   "candidateCanonical": "https://razonlab.com/",
+  "candidateExternalLinks": [
+    {
+      "id": "youtube",
+      "url": "https://www.youtube.com/@razonlab",
+      "publicIdentity": "Razon Live Lab",
+      "verifiedAt": "2026-08-12",
+      "evidenceStatus": "external-observed",
+      "claimBoundary": "Destination and public metadata only; no cadence or content claim."
+    },
+    {
+      "id": "twitch",
+      "url": "https://www.twitch.tv/razonlab",
+      "publicIdentity": "RazonLab",
+      "verifiedAt": "2026-08-12",
+      "evidenceStatus": "external-observed",
+      "claimBoundary": "Destination and public metadata only; no cadence or content claim."
+    },
+    {
+      "id": "x",
+      "url": "https://x.com/Razonapp",
+      "publicIdentity": "Razon Live Lab (@Razonapp)",
+      "verifiedAt": "2026-08-12",
+      "evidenceStatus": "external-observed",
+      "claimBoundary": "Destination and public metadata only; no cadence or content claim."
+    },
+    {
+      "id": "personal",
+      "url": "https://davidtiz.com/",
+      "publicIdentity": "David Ortiz personal portfolio",
+      "verifiedAt": "2026-08-12",
+      "evidenceStatus": "external-observed",
+      "claimBoundary": "Personal and collaboration routing only."
+    },
+    {
+      "id": "commercial",
+      "url": "https://razonworks.com/request",
+      "publicIdentity": "RazonWorks request a consultation",
+      "verifiedAt": "2026-08-12",
+      "evidenceStatus": "external-observed",
+      "claimBoundary": "Commercial project routing only; no legal identity inference."
+    },
+    {
+      "id": "learning",
+      "url": "https://highencodelearning.com/",
+      "publicIdentity": "High Encode Learning",
+      "verifiedAt": "2026-08-12",
+      "evidenceStatus": "external-observed",
+      "claimBoundary": "Current learning-surface routing only; no relationship to RazonWorks is asserted."
+    }
+  ],
   "preservedRuntimeFiles": [
     {
       "path": "index.html",
@@ -28,7 +78,7 @@
   "candidateRuntimeFiles": [
     {
       "path": "index.html",
-      "sha256": "c8ad95af2fd6c4670d5a2fd3ded6a0bd98bfc2818d8c612bf8d37ce29237533b"
+      "sha256": "d3f81ace94a09eefd8aa2cbbd31ff4080335dd3c935a13a35462e198913d767e"
     },
     {
       "path": "favicon.png",
@@ -115,10 +165,10 @@
       "kind": "external-links",
       "source": "YouTube, Twitch, X, and GitHub values in LINKS and sameAs arrays",
       "selectors": ["script containing const LINKS", "#watch"],
-      "classification": "verify",
-      "destination": "Link only to channels whose current ownership, handle, and content purpose are verified.",
-      "evidenceStatus": "external-unverified",
-      "followUp": "Open each public URL, confirm owner and destination, and record the verification date."
+      "classification": "rewrite",
+      "destination": "Expose the three verified Razon Live Lab destinations without a fixed availability or content claim.",
+      "evidenceStatus": "external-observed",
+      "followUp": "Re-verify the public URL and identity metadata before any later publication that changes these links."
     },
     {
       "id": "related-directory",
@@ -136,7 +186,7 @@
       "source": "hello@razonlab.com and broad work, collaboration, and question invitation",
       "selectors": ["#contact", "footer"],
       "classification": "rewrite",
-      "destination": "Route personal or collaboration intent to DavidTiz and commercial project intent to RazonWorks; omit unresolved research contact.",
+      "destination": "Route personal or collaboration intent to DavidTiz and commercial project intent to the live RazonWorks request route; omit unresolved research email contact.",
       "evidenceStatus": "external-unverified",
       "followUp": "Classify contact intent and verify the chosen destination before adding a public action."
     },

@@ -24,12 +24,18 @@ README.md   Repository status, change-control rules, and migration boundary.
 
 There is no package manifest or build step. Do not add a framework merely to complete the governance phase.
 
-## Portfolio ownership
+## Public-surface routing
 
-- RazonWorks is the only owner of commercial services and client intake.
-- High Encode Learning owns curriculum, tutorials, learning paths, and learner support.
-- DavidTiz owns David's personal identity, curated proof, personal operating notes, and personal contact.
-- Razon Lab owns reproducible experiments, benchmarks, evaluations, prototypes, and research artifacts as part of RazonWorks.
+- RazonWorks is the current public route for commercial services and project requests.
+- High Encode Learning is the current learning surface for structured lessons and guided practice.
+- DavidTiz is David's personal identity, curated-proof, collaboration, speaking, and peer-work surface.
+- Razon Lab holds reproducible experiments, benchmarks, evaluations, prototypes, and research artifacts as part of RazonWorks.
+
+The current operating system leaves the legal and public identity relationship
+between RazonWorks and High Encode Learning unresolved. Do not infer or publish
+an entity, DBA, payment, contract, domain-ownership, or replacement relationship
+from this routing. The Lab page may name the current public surfaces and its own
+RazonWorks relationship; it must not decide the unresolved identity question.
 
 When another property needs context, summarize and link to the canonical artifact. Do not duplicate a full service description, lesson, personal case narrative, or experiment report.
 
@@ -54,9 +60,12 @@ Use evidence-safe terms such as `observed`, `reproduced`, `inferred`, and `unver
 The paired `/lab` and `/es/lab` routes now exist in local RazonWorks source.
 Their hosted behavior has not been verified. This repository's current stacked
 slice preserves the source inventory, rewrites the standalone presentation as
-an evidence-led Lab surface, changes the source canonical and robots metadata,
-replaces the outdated social card, and adds local integrity tests. These are
-reviewed source changes; they do not authorize or complete any of the following:
+an evidence-led Lab surface, restores only verified public channel destinations
+without a fixed availability claim, routes personal, commercial, and learning
+intent to their current public surfaces, changes the source canonical and robots
+metadata, replaces the outdated social card, and adds local integrity tests.
+These are reviewed source changes; they do not authorize or complete any of the
+following:
 
 - deploying or connecting the repository to Vercel;
 - changing the hosted `razonlab.com` artifact, DNS, redirects, provider

@@ -18,6 +18,8 @@ test("publishes the standalone Lab relationship and evidence contract", () => {
   assert.match(html, /Experiments earn their claims here\./);
   assert.match(html, /A result is not yet a record\./);
   assert.match(html, /The public experiment ledger is intentionally empty\./);
+  assert.match(html, /Current public channels/);
+  assert.match(html, /Use the front door that matches the question\./);
 
   for (const field of [
     "Date",
@@ -34,26 +36,51 @@ test("publishes the standalone Lab relationship and evidence contract", () => {
   }
 });
 
-test("removes unverified broadcast, schedule, directory, and identity assertions", () => {
+test("removes unverified broadcast, cadence, email, and identity assertions", () => {
   for (const forbidden of [
     "BroadcastEvent",
+    "isLiveBroadcast",
+    "eventSchedule",
     "jobTitle",
     "worksFor",
     "sameAs",
     "Mon-Fri",
     "6:00-8:00",
+    "Monday to Friday",
+    "Live on Twitch",
     "Raw Dogging Programming",
     "Learning programming",
     "Related work by David",
-    "youtube.com",
-    "twitch.tv",
-    "x.com/",
-    "davidtiz.com",
     "mailto:",
     "data-link",
+    "High Encode Learning LLC",
   ]) {
     assert.equal(html.includes(forbidden), false, `found retired assertion: ${forbidden}`);
   }
+});
+
+test("publishes only the verified public channel destinations without cadence claims", () => {
+  for (const [label, url] of [
+    ["YouTube", "https://www.youtube.com/@razonlab"],
+    ["Twitch", "https://www.twitch.tv/razonlab"],
+    ["X", "https://x.com/Razonapp"],
+  ]) {
+    assert.match(html, new RegExp(`<h3>${label}</h3>`));
+    assert.equal(attributeValues("href").filter((href) => href === url).length, 1);
+  }
+
+  assert.match(html, /Each platform is the source for its own availability\./);
+  assert.match(html, /only after it meets the publication standard above\./);
+});
+
+test("routes personal, commercial, and learning intent without legal inference", () => {
+  assert.match(html, /href="https:\/\/davidtiz\.com\/"/);
+  assert.match(html, /href="https:\/\/razonworks\.com\/request"/);
+  assert.match(html, /href="https:\/\/highencodelearning\.com\/"/);
+  assert.match(html, /personal portfolio and context for collaboration/);
+  assert.match(html, /Commercial services and a scoped project request\./);
+  assert.match(html, /Structured lessons and guided practice grounded in real builds\./);
+  assert.doesNotMatch(html, /High Encode Learning (?:is|as|belongs|operates) (?:a|an|the|under)/i);
 });
 
 test("uses minimal, non-duplicated WebSite and WebPage schema", () => {
@@ -88,7 +115,12 @@ test("keeps discovery metadata and outbound navigation bounded", () => {
       href.startsWith("#") ||
         href === "favicon.png" ||
         href === "https://razonlab.com/" ||
-        href === "https://razonworks.com/",
+        href === "https://www.youtube.com/@razonlab" ||
+        href === "https://www.twitch.tv/razonlab" ||
+        href === "https://x.com/Razonapp" ||
+        href === "https://davidtiz.com/" ||
+        href === "https://razonworks.com/request" ||
+        href === "https://highencodelearning.com/",
       `unexpected link destination: ${href}`,
     );
   }
@@ -101,7 +133,7 @@ test("preserves the accessibility and reduced-motion boundary", () => {
   assert.match(html, /a:focus-visible\{outline:3px solid var\(--amber\)/);
   assert.match(
     html,
-    /@media\(prefers-reduced-motion:reduce\)\{html\{scroll-behavior:auto\}\}/,
+    /@media\(prefers-reduced-motion:reduce\)\{[\s\S]*?html\{scroll-behavior:auto\}/,
   );
 
   const ids = attributeValues("id");

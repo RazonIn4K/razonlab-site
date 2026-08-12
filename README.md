@@ -5,8 +5,11 @@ This repository preserves the standalone Razon Live Lab source while useful mate
 The repository remains a static site with one self-contained HTML file and no
 build step. The current source candidate replaces the learning-and-broadcast
 presentation with an evidence-led Lab boundary and a zero-record experiment
-ledger. It also replaces the outdated live-stream social card. These are source
-changes only; no hosting, domain, or redirect behavior has been changed here.
+ledger. It keeps only public channel destinations verified on 2026-08-12,
+without a recurring availability claim, and routes personal, commercial, and
+learning intent to their current public surfaces. It also replaces the outdated
+live-stream social card. These are source changes only; no hosting, domain, or
+redirect behavior has been changed here.
 
 ## Brand role
 
@@ -15,7 +18,16 @@ changes only; no hosting, domain, or redirect behavior has been changed here.
 - **Proof:** method, environment, observations, limitations, evidence status, and reproducible artifacts.
 - **Not owned here:** commercial services and client intake, beginner curriculum, or David's personal portfolio and contact hub.
 
-RazonWorks owns commercial services and client intake. High Encode Learning owns education. DavidTiz owns personal identity and curated proof. Full experimental research artifacts belong to Razon Lab as part of RazonWorks.
+RazonWorks is the current public route for commercial project requests. High
+Encode Learning is the current learning surface for structured lessons and
+guided practice. DavidTiz is the current personal portfolio and collaboration
+surface. Full experimental research artifacts belong to Razon Lab as part of
+RazonWorks.
+
+This source does not decide the unresolved legal or public identity relationship
+between RazonWorks and High Encode Learning. Do not infer an entity, DBA,
+payment, contract, domain-ownership, or replacement relationship from these
+links.
 
 The canonical portfolio decision and contract live in the `RazonIn4K/razonworks` repository at `docs/adr/0039-portfolio-brand-and-content-ownership.md`, `docs/brand/portfolio-charter.md`, and `docs/brand/content-ownership-ledger.md`. Read [docs/BRAND-BOUNDARY.md](docs/BRAND-BOUNDARY.md) for the local evidence and migration rules.
 
@@ -37,6 +49,20 @@ The canonical portfolio decision and contract live in the `RazonIn4K/razonworks`
 - `tests/source-boundary.test.mjs`: public-copy, schema, link, discovery, and
   social-image boundary checks.
 - `AGENTS.md`: contributor instructions and safe migration order.
+
+## Verified external destinations
+
+The candidate links below were checked through their public HTTP response and
+page metadata on 2026-08-12. This verifies the destination and displayed public
+identity only; it does not verify a publishing cadence, future availability, or
+the content of any post or stream.
+
+- YouTube: `https://www.youtube.com/@razonlab` (`Razon Live Lab`)
+- Twitch: `https://www.twitch.tv/razonlab` (`RazonLab`)
+- X: `https://x.com/Razonapp` (`Razon Live Lab`, `@Razonapp`)
+- DavidTiz: `https://davidtiz.com/` (personal portfolio)
+- RazonWorks: `https://razonworks.com/request` (commercial request route)
+- High Encode Learning: `https://highencodelearning.com/` (learning surface)
 
 ## Planned destination
 
