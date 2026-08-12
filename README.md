@@ -3,9 +3,10 @@
 This repository preserves the standalone Razon Live Lab source while useful material is evaluated for migration. The selected portfolio role is Razon Lab, the experimental research and prototyping arm of RazonWorks.
 
 The repository remains a static site with one self-contained HTML file and no
-build step. The current migration-inventory slice adds JSON documentation and a
-Node integrity test only. It does not change the public site, hosting, domain,
-or redirect behavior.
+build step. The current source candidate replaces the learning-and-broadcast
+presentation with an evidence-led Lab boundary and a zero-record experiment
+ledger. It also replaces the outdated live-stream social card. These are source
+changes only; no hosting, domain, or redirect behavior has been changed here.
 
 ## Brand role
 
@@ -20,14 +21,21 @@ The canonical portfolio decision and contract live in the `RazonIn4K/razonworks`
 
 ## Files
 
-- `index.html`: the preserved standalone site, including inline CSS, metadata, structured data, visible copy, and the `LINKS` configuration.
+- `index.html`: the standalone evidence-led Lab source, including inline CSS, metadata, minimal structured data, and visible copy.
 - `favicon.png`: current logo and favicon.
-- `og.png`: current 1200 x 630 social preview image.
+- `og.png`: 1200 x 630 research-led social preview image. It was generated on
+  2026-08-12 from the repository's prior `og.png` as an edit reference, then
+  downscaled and losslessly optimized locally. The generated visual contains
+  no third-party media, people, customer material, or externally licensed
+  assets; repository ownership and final publication approval remain with the
+  project owner.
 - `docs/BRAND-BOUNDARY.md`: target brand contract, evidence standard, and migration guardrails.
 - `docs/migration/standalone-source-inventory.json`: source revision, runtime
   hashes, artifact classifications, and required follow-up evidence.
 - `tests/migration-inventory.test.mjs`: fail-closed inventory and runtime-byte
   integrity checks.
+- `tests/source-boundary.test.mjs`: public-copy, schema, link, discovery, and
+  social-image boundary checks.
 - `AGENTS.md`: contributor instructions and safe migration order.
 
 ## Planned destination
@@ -42,18 +50,18 @@ is preserved, and the user approves the cutover.
 
 ## Hosting record and change control
 
-The previous README recorded Vercel project `razonlab-site` and production domain `razonlab.com`, and stated that the repository was not connected for push-to-deploy. Those details were not live-verified during Phase 0.
+The previous README recorded Vercel project `razonlab-site` and production domain `razonlab.com`, and stated that the repository was not connected for push-to-deploy. Those details have not been treated as current provider evidence in this source packet.
 
 Do not deploy, connect Git, change Vercel settings, alter DNS, delete the standalone source, or configure a redirect without explicit authorization. A local documentation change is not evidence of hosted state.
 
-## Migration inventory validation
+## Source-candidate validation
 
-For this source-inventory packet:
+For this stacked source packet:
 
 ```bash
-node --test tests/migration-inventory.test.mjs
+node --test tests/*.test.mjs
 git diff --check
 ```
 
-Build, browser, provider, DNS, redirect, and live-domain checks are not required
-because no runtime or external behavior changes in this slice.
+Inspect `index.html` at 320, 390, 768, and 1440 CSS pixels before publication.
+Provider, DNS, redirect, and live-domain state remain separately unverified.

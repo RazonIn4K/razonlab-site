@@ -47,7 +47,7 @@ const allowedEvidenceStatuses = new Set([
 ]);
 
 test("pins the preserved runtime source and paired local target routes", () => {
-  assert.equal(inventory.schemaVersion, 1);
+  assert.equal(inventory.schemaVersion, 2);
   assert.match(inventory.sourceRevision, /^[0-9a-f]{40}$/);
   assert.equal(
     inventory.sourceRevision,
@@ -55,27 +55,43 @@ test("pins the preserved runtime source and paired local target routes", () => {
   );
   assert.deepEqual(inventory.targetRoutes, ["/lab", "/es/lab"]);
   assert.equal(inventory.targetHostedState, "unverified");
+  assert.equal(inventory.candidateStatus, "local-source-only");
+  assert.equal(inventory.candidateDeploymentAuthorized, false);
+  assert.equal(inventory.candidateRedirectAuthorized, false);
+  assert.equal(inventory.candidateCanonical, "https://razonlab.com/");
 });
 
-test("matches every runtime file to its pinned Git blob and inventory SHA-256", async () => {
+test("preserves hashes for every pinned source runtime file", () => {
   assert.deepEqual(
-    inventory.runtimeFiles.map((file) => file.path).sort(),
+    inventory.preservedRuntimeFiles.map((file) => file.path).sort(),
     ["favicon.png", "index.html", "og.png"],
   );
 
-  for (const file of inventory.runtimeFiles) {
+  for (const file of inventory.preservedRuntimeFiles) {
     assert.match(file.sha256, /^[0-9a-f]{64}$/);
-    const currentBytes = await readFile(path.join(repositoryRoot, file.path));
     const sourceBytes = execFileSync(
       "git",
       ["show", `${inventory.sourceRevision}:${file.path}`],
       { cwd: repositoryRoot, encoding: null },
     );
-    const currentDigest = createHash("sha256").update(currentBytes).digest("hex");
     const sourceDigest = createHash("sha256").update(sourceBytes).digest("hex");
 
     assert.equal(sourceDigest, file.sha256, `${file.path} source digest drifted`);
-    assert.equal(currentDigest, sourceDigest, `${file.path} no longer matches pinned source`);
+  }
+});
+
+test("matches every local source candidate file to its recorded digest", async () => {
+  assert.deepEqual(
+    inventory.candidateRuntimeFiles.map((file) => file.path).sort(),
+    ["favicon.png", "index.html", "og.png"],
+  );
+
+  for (const file of inventory.candidateRuntimeFiles) {
+    assert.match(file.sha256, /^[0-9a-f]{64}$/);
+    const currentBytes = await readFile(path.join(repositoryRoot, file.path));
+    const currentDigest = createHash("sha256").update(currentBytes).digest("hex");
+
+    assert.equal(currentDigest, file.sha256, `${file.path} candidate digest drifted`);
   }
 });
 
@@ -95,21 +111,19 @@ test("classifies every required source artifact with a fail-closed follow-up", (
   }
 });
 
-test("does not preserve unverified schedules, channels, contact, or broadcast claims as truth", () => {
+test("applies the canonical dispositions to schedules, channels, contact, and broadcast claims", () => {
   const artifacts = Object.fromEntries(
     inventory.artifacts.map((artifact) => [artifact.id, artifact]),
   );
 
-  for (const id of [
-    "schedule",
-    "channel-links",
-    "contact",
-    "structured-broadcast",
-  ]) {
-    assert.equal(artifacts[id].classification, "verify");
+  for (const id of ["schedule", "channel-links", "contact", "structured-broadcast"]) {
     assert.match(artifacts[id].evidenceStatus, /unverified$/);
   }
 
+  assert.equal(artifacts["schedule"].classification, "retire");
+  assert.equal(artifacts["structured-broadcast"].classification, "retire");
+  assert.equal(artifacts["contact"].classification, "rewrite");
+  assert.equal(artifacts["channel-links"].classification, "verify");
   assert.equal(artifacts["related-directory"].classification, "retire");
   assert.equal(artifacts["stream-loop"].classification, "preserve");
 

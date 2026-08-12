@@ -16,7 +16,7 @@ Read [docs/BRAND-BOUNDARY.md](docs/BRAND-BOUNDARY.md) before changing content, l
 
 ```text
 index.html   Current standalone site, including HTML, inline CSS, metadata,
-             structured data, visible copy, and outbound link configuration.
+             structured data, visible copy, and bounded navigation.
 favicon.png Current logo and favicon asset.
 og.png      Current social preview image.
 README.md   Repository status, change-control rules, and migration boundary.
@@ -49,16 +49,18 @@ A Lab artifact should record the fields that apply:
 
 Use evidence-safe terms such as `observed`, `reproduced`, `inferred`, and `unverified`. Do not invent experiments, clients, outcomes, metrics, security impact, or production status. Do not publish secrets, customer data, private provider output, or unsafe reproduction material.
 
-## Current migration-inventory boundary
+## Current source-candidate boundary
 
 The paired `/lab` and `/es/lab` routes now exist in local RazonWorks source.
-Their hosted behavior has not been verified. This repository's current slice
-adds a source inventory and a local integrity test only. It does not authorize
-or complete any of the following:
+Their hosted behavior has not been verified. This repository's current stacked
+slice preserves the source inventory, rewrites the standalone presentation as
+an evidence-led Lab surface, changes the source canonical and robots metadata,
+replaces the outdated social card, and adds local integrity tests. These are
+reviewed source changes; they do not authorize or complete any of the following:
 
-- changing `index.html`, `favicon.png`, or `og.png`;
 - deploying or connecting the repository to Vercel;
-- changing `razonlab.com`, DNS, redirects, canonicals, robots rules, or analytics;
+- changing the hosted `razonlab.com` artifact, DNS, redirects, provider
+  settings, or analytics;
 - deleting or archiving the standalone source;
 - claiming that a replacement destination is live.
 
@@ -80,11 +82,13 @@ Do not reverse this order. A planned route or local build is not a hosted destin
 
 ## Local validation
 
-For migration-inventory changes, review the diff and run:
+For source or migration-inventory changes, review the diff and run:
 
 ```bash
-node --test tests/migration-inventory.test.mjs
+node --test tests/*.test.mjs
 git diff --check
 ```
 
-Record browser, provider, Vercel, DNS, redirect, and live-domain checks as not run unless they were separately authorized and completed.
+Inspect the source at 390, 768, and 1440 CSS pixels when runtime files change.
+Record provider, Vercel, DNS, redirect, and live-domain checks as not run unless
+they were separately authorized and completed.

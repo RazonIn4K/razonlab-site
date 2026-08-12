@@ -58,13 +58,18 @@ Do not turn a local demonstration into a claim about production systems, populat
 
 ## Current repository status
 
-This repository contains a self-contained `index.html` for the existing Razon Live Lab presentation plus `favicon.png` and `og.png`. The current source mixes learning-in-public language, scheduled-stream claims, broad project links, and experimental topics. The runtime is preserved while its inventory is reviewed. Neither preservation nor inventory endorses every current statement as accurate or current.
+This repository contains a self-contained `index.html`, `favicon.png`, and
+`og.png`. The current source candidate identifies Razon Lab as the experimental
+research arm of RazonWorks, exposes the evidence contract, and presents an
+explicit zero-record state. It retires learning-in-public, recurring schedule,
+channel-directory, broad contact, and unsupported identity-schema claims.
 
 The migration inventory at
 `docs/migration/standalone-source-inventory.json` now pins the preserved source
 revision and runtime hashes, classifies each migration artifact, and keeps
-unverified schedule, channel, contact, and broadcast claims fail-closed. Its
-test does not verify those external claims.
+the preserved Phase 0 digests separate from candidate runtime digests. The
+inventory and source tests keep unverified schedule, channel, contact, and
+broadcast claims fail-closed; they do not verify external systems.
 
 The hosting and domain details in the README are repository records. They were not live-verified by the documentation-only Phase 0 packet.
 
@@ -72,8 +77,9 @@ The hosting and domain details in the README are repository records. They were n
 
 - `RazonIn4K/razonworks` `/lab` and `/es/lab` exist in local source as of
   2026-08-10. Their preview and production state remain unverified here.
-- Neither Phase 0 nor the standalone inventory deploys or hosts those routes.
-- `index.html`, assets, Vercel configuration, DNS, and the standalone domain remain unchanged.
+- Neither Phase 0 nor the standalone source candidate deploys or hosts those routes.
+- The source candidate changes `index.html` and `og.png`; Vercel configuration,
+  DNS, and the standalone domain remain unchanged by this repository work.
 - No redirect from `razonlab.com` is authorized until both routes are hosted,
   English and Spanish behavior is verified there, useful source material is
   preserved, and the user approves the cutover.
@@ -90,6 +96,9 @@ The hosting and domain details in the README are repository records. They were n
 6. Request explicit approval for domain or redirect changes.
 7. Verify the approved cutover from the public domain through the final destination.
 
-## Phase 0 non-goals
+## Source-candidate non-goals
 
-This governance change does not modify public copy, navigation, metadata, structured data, assets, analytics, hosting, deployment, DNS, redirects, or live accounts. It does not delete content, claim a replacement is live, or authorize a production cutover.
+This source candidate does not modify analytics, hosting, deployment, DNS,
+redirects, or live accounts. It does not delete the preserved source revision,
+claim a replacement is live, verify an external contact channel, or authorize a
+production cutover.

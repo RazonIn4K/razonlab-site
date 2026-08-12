@@ -1,12 +1,17 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "inventoryDate": "2026-08-10",
   "sourceRepository": "RazonIn4K/razonlab-site",
   "sourceRevision": "4ee09a343c10f3ff5177f617193585640f067aab",
   "targetRepository": "RazonIn4K/razonworks",
   "targetRoutes": ["/lab", "/es/lab"],
   "targetHostedState": "unverified",
-  "runtimeFiles": [
+  "candidateDate": "2026-08-12",
+  "candidateStatus": "local-source-only",
+  "candidateDeploymentAuthorized": false,
+  "candidateRedirectAuthorized": false,
+  "candidateCanonical": "https://razonlab.com/",
+  "preservedRuntimeFiles": [
     {
       "path": "index.html",
       "sha256": "86e0773d47c595f6c1e86ce56f9d929dd36f23a3e90fa4b6d55e5da5c4d9f34c"
@@ -18,6 +23,20 @@
     {
       "path": "og.png",
       "sha256": "11741e94806c6d95fb841d57be2306ab7ea7032e7aadaaaf11535e518db9be5f"
+    }
+  ],
+  "candidateRuntimeFiles": [
+    {
+      "path": "index.html",
+      "sha256": "c8ad95af2fd6c4670d5a2fd3ded6a0bd98bfc2818d8c612bf8d37ce29237533b"
+    },
+    {
+      "path": "favicon.png",
+      "sha256": "56c82827e2a7263bf96839da66c1947bbe0277e797673fb176a1af28dc85d205"
+    },
+    {
+      "path": "og.png",
+      "sha256": "16b2238d638d3bf6f351a5cec8b3eada1155bb903b8b97bd167f51e99f8d3922"
     }
   ],
   "artifacts": [
@@ -46,10 +65,10 @@
       "kind": "structured-data",
       "source": "BroadcastEvent and Schedule nodes in the JSON-LD graph",
       "selectors": ["script[type=application/ld+json]"],
-      "classification": "verify",
-      "destination": "Publish event schema only for a currently verified recurring or scheduled broadcast.",
+      "classification": "retire",
+      "destination": "Do not migrate the historical BroadcastEvent or Schedule nodes.",
       "evidenceStatus": "claim-unverified",
-      "followUp": "Verify the stream exists, its service, days, times, timezone, and live status before preserving any event fields."
+      "followUp": "Treat any future event schema as a new reviewed artifact with current service, date, time, timezone, and organizer evidence."
     },
     {
       "id": "hero",
@@ -66,10 +85,10 @@
       "kind": "visible-claim",
       "source": "Monday-Friday 6:00-8:00 PM Central schedule and notification copy",
       "selectors": ["#schedule", "section.hero p:nth-of-type(2)"],
-      "classification": "verify",
-      "destination": "Show a schedule only when its current source and owner are recorded.",
+      "classification": "retire",
+      "destination": "Do not migrate the historical recurring schedule or notification claim.",
       "evidenceStatus": "claim-unverified",
-      "followUp": "Verify current days, time, timezone, platform, and notification behavior."
+      "followUp": "Treat any future schedule as a new reviewed artifact with a current owner and dated evidence."
     },
     {
       "id": "stream-loop",
@@ -116,10 +135,10 @@
       "kind": "contact-channel",
       "source": "hello@razonlab.com and broad work, collaboration, and question invitation",
       "selectors": ["#contact", "footer"],
-      "classification": "verify",
-      "destination": "Use a verified Lab-specific research contact or omit the action.",
+      "classification": "rewrite",
+      "destination": "Route personal or collaboration intent to DavidTiz and commercial project intent to RazonWorks; omit unresolved research contact.",
       "evidenceStatus": "external-unverified",
-      "followUp": "Verify mailbox ownership, delivery, retention, response expectations, and portfolio routing."
+      "followUp": "Classify contact intent and verify the chosen destination before adding a public action."
     },
     {
       "id": "navigation",
