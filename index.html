@@ -3,303 +3,348 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Razon Live Lab: Raw dogging programming, live Mon-Fri 6-8 PM CT</title>
-<meta name="description" content="Learning programming in public, live on Twitch Mon-Fri 6-8 PM CT. Raw dogging programming: no hiding behind the abstractions. By David Ortiz / Razon. EN / ES.">
+<title>Razon Lab | Experiments that earn their claims</title>
+<meta name="description" content="Razon Lab is a public evidence ledger. See how AI, automation, and security tests are bounded before a public record is released.">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#0e1116">
 <link rel="icon" type="image/png" href="favicon.png">
-<!-- Open Graph -->
+<link rel="canonical" href="https://razonlab.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Razon Live Lab: Raw dogging programming, live Mon-Fri 6-8 PM CT">
-<meta property="og:description" content="Learning programming in public. Live on Twitch Mon-Fri 6-8 PM CT. Aprendiendo a programar en publico. EN / ES.">
-<meta property="og:url" content="https://razonlab.com">
-<!-- og:image: 1200x630 banner -->
+<meta property="og:title" content="Razon Lab | Experiments earn their claims here">
+<meta property="og:description" content="A public evidence ledger for inspectable AI, automation, and security tests.">
+<meta property="og:url" content="https://razonlab.com/">
 <meta property="og:image" content="https://razonlab.com/og.png">
-<!-- Structured data for search engines -->
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Razon Lab research flask and Evidence before adoption message">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Razon Lab | Experiments earn their claims here">
+<meta name="twitter:description" content="A public evidence ledger for inspectable AI, automation, and security tests.">
+<meta name="twitter:image" content="https://razonlab.com/og.png">
+<meta name="twitter:image:alt" content="Razon Lab research flask and Evidence before adoption message">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://razonlab.com/#org",
-      "name": "Razon Live Lab",
-      "url": "https://razonlab.com",
-      "logo": "https://razonlab.com/favicon.png",
-      "image": "https://razonlab.com/og.png",
-      "description": "Learning-in-public lab by David Ortiz (Razon). Raw Dogging Programming: learning programming from the ground up, live on Twitch, Monday to Friday 6:00-8:00 PM Central. EN / ES.",
-      "founder": { "@id": "https://razonlab.com/#david" },
-      "sameAs": [
-        "https://youtube.com/@razonlab",
-        "https://twitch.tv/razonlab",
-        "https://x.com/Razonapp",
-        "https://github.com/RazonIn4K",
-        "https://davidtiz.com"
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://razonlab.com/#david",
-      "name": "David Ortiz",
-      "alternateName": "Razon",
-      "url": "https://razonlab.com",
-      "jobTitle": "AI Automation & Security Engineer",
-      "worksFor": { "@id": "https://razonlab.com/#org" },
-      "knowsLanguage": ["en", "es"],
-      "sameAs": [
-        "https://youtube.com/@razonlab",
-        "https://twitch.tv/razonlab",
-        "https://x.com/Razonapp",
-        "https://github.com/RazonIn4K",
-        "https://davidtiz.com"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://razonlab.com/#website",
-      "url": "https://razonlab.com",
-      "name": "Razon Live Lab",
-      "publisher": { "@id": "https://razonlab.com/#org" },
-      "inLanguage": ["en", "es"]
-    },
-    {
-      "@type": "BroadcastEvent",
-      "@id": "https://razonlab.com/#stream",
-      "name": "Raw Dogging Programming (live stream)",
-      "description": "Learning programming without hiding behind the abstractions. Live Monday to Friday, 6:00-8:00 PM Central (CT).",
-      "isLiveBroadcast": true,
-      "publishedOn": { "@type": "BroadcastService", "name": "Twitch", "url": "https://twitch.tv/razonlab" },
-      "eventSchedule": {
-        "@type": "Schedule",
-        "byDay": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday"],
-        "startTime": "18:00",
-        "endTime": "20:00",
-        "scheduleTimezone": "America/Chicago"
-      },
-      "organizer": { "@id": "https://razonlab.com/#david" }
-    }
-  ]
-}
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://razonlab.com/#website",
+    "url": "https://razonlab.com/",
+    "name": "Razon Lab",
+    "description": "A public evidence ledger for bounded AI, automation, and security tests.",
+    "inLanguage": "en"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://razonlab.com/#page",
+    "url": "https://razonlab.com/",
+    "name": "Razon Lab publication standard",
+    "description": "The release gate and public zero-record state for Razon Lab experiments.",
+    "isPartOf": { "@id": "https://razonlab.com/#website" },
+    "inLanguage": "en"
+  }
+]
 </script>
 <style>
   :root{
-    --bg:#0e1116; --bg2:#141a22; --card:#161d27; --line:#243140;
-    --ink:#e8eef5; --muted:#9bb0c4; --teal:#2dd4bf; --teal-dim:#14b8a6;
-    --amber:#f2a35e; --radius:16px; --max:1080px;
+    --bg:#0e1116; --bg2:#121923; --card:#161f2b; --card2:#101720;
+    --line:#2a3a4b; --ink:#edf4fa; --muted:#a8bacb; --teal:#2dd4bf;
+    --teal-dim:#14b8a6; --amber:#f2a35e; --radius:16px; --max:1080px;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
     margin:0; background:var(--bg); color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.55; -webkit-font-smoothing:antialiased;
+    line-height:1.58; -webkit-font-smoothing:antialiased;
   }
   a{color:inherit}
-  .wrap{max-width:var(--max); margin:0 auto; padding:0 22px}
-  .eyebrow{color:var(--teal); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:.78rem}
-  /* nav */
-  header.nav{position:sticky; top:0; z-index:20; backdrop-filter:blur(8px);
-    background:rgba(14,17,22,.82); border-bottom:1px solid var(--line)}
-  .nav .wrap{display:flex; align-items:center; justify-content:space-between; height:62px}
-  .logo{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:-.01em}
-  .logo .mark{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--teal),var(--teal-dim));
-    display:grid;place-items:center;color:#06231f;font-weight:900;font-size:14px}
-  .nav nav{display:flex; gap:20px; font-size:.92rem; color:var(--muted)}
+  a:focus-visible{outline:3px solid var(--amber); outline-offset:4px; border-radius:4px}
+  .wrap{width:min(100% - 44px,var(--max)); margin-inline:auto}
+  .skip-link{
+    position:absolute; top:-90px; left:12px; z-index:40; padding:10px 14px;
+    border-radius:8px; background:var(--teal); color:#06231f; font-weight:800;
+    text-decoration:none;
+  }
+  .skip-link:focus{top:10px}
+  .eyebrow{
+    color:var(--teal); font-size:.77rem; font-weight:800; letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .nav{
+    position:sticky; top:0; z-index:20; border-bottom:1px solid var(--line);
+    background:rgba(14,17,22,.9); backdrop-filter:blur(10px);
+  }
+  .nav .wrap{display:flex; min-height:66px; align-items:center; justify-content:space-between; gap:24px}
+  .logo{display:flex; align-items:center; gap:10px; font-weight:850; letter-spacing:-.02em; text-decoration:none}
+  .logo img{width:32px; height:32px; border-radius:9px}
+  .nav nav{display:flex; align-items:center; gap:20px; color:var(--muted); font-size:.92rem}
+  .nav nav a{text-decoration:none}
   .nav nav a:hover{color:var(--ink)}
-  @media(max-width:640px){ .nav nav{display:none} }
-  /* hero */
-  .hero{padding:74px 0 30px; background:
-    radial-gradient(900px 420px at 78% -8%, rgba(45,212,191,.13), transparent 60%),
-    radial-gradient(700px 380px at 0% 0%, rgba(242,163,94,.08), transparent 55%)}
-  .hero h1{font-size:clamp(2.3rem,6vw,3.7rem); line-height:1.04; margin:.5rem 0 .2rem; letter-spacing:-.02em}
-  .hero .tag{font-size:clamp(1.05rem,2.4vw,1.35rem); color:var(--teal); font-weight:600; margin:0 0 .8rem}
-  .hero p.lede{color:var(--muted); font-size:1.06rem; max-width:60ch; margin:0 0 1.6rem}
-  .btns{display:flex; flex-wrap:wrap; gap:12px}
-  .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 18px; border-radius:12px;
-    font-weight:700; font-size:.96rem; text-decoration:none; border:1px solid var(--line); transition:.15s}
-  .btn:hover{transform:translateY(-1px)}
-  .btn.primary{background:linear-gradient(135deg,var(--teal),var(--teal-dim)); color:#06231f; border-color:transparent}
-  .btn.ghost{background:var(--card); color:var(--ink)}
-  .btn.amber{background:transparent; color:var(--amber); border-color:rgba(242,163,94,.5)}
-  /* sections */
-  section{padding:46px 0}
-  h2{font-size:clamp(1.5rem,3.2vw,2rem); margin:.2rem 0 1.2rem; letter-spacing:-.01em}
-  .sub{color:var(--muted); max-width:62ch; margin:-.6rem 0 1.4rem}
-  /* promise */
-  .promise{background:linear-gradient(180deg,var(--bg2),var(--bg)); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
-  .promise .card{background:var(--card); border:1px solid var(--line); border-left:4px solid var(--teal);
-    border-radius:var(--radius); padding:24px 26px}
-  .promise strong{color:var(--teal)}
-  /* grid cards */
+  .hero{
+    padding:86px 0 58px; background:
+      radial-gradient(920px 460px at 82% -10%,rgba(45,212,191,.14),transparent 62%),
+      radial-gradient(700px 380px at 0% 0%,rgba(242,163,94,.08),transparent 56%);
+  }
+  .relationship{
+    display:inline-flex; align-items:center; gap:8px; padding:7px 11px; margin-bottom:18px;
+    border:1px solid rgba(45,212,191,.35); border-radius:999px; color:var(--teal);
+    background:rgba(45,212,191,.06); font-size:.86rem; font-weight:750;
+  }
+  .relationship::before{content:""; width:7px; height:7px; border-radius:999px; background:var(--teal)}
+  h1{max-width:900px; margin:0 0 18px; font-size:clamp(2.45rem,7vw,5rem); line-height:.99; letter-spacing:-.045em}
+  .lede{max-width:68ch; margin:0; color:var(--muted); font-size:clamp(1.05rem,2.2vw,1.28rem)}
+  .lede strong{color:var(--ink)}
+  .translation{display:block; margin-top:10px; color:#bfd0df; font-size:.98rem; font-style:italic}
+  .hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:28px}
+  .button{
+    display:inline-flex; min-height:46px; align-items:center; justify-content:center; padding:11px 17px;
+    border:1px solid var(--line); border-radius:12px; background:var(--card); color:var(--ink);
+    font-weight:800; text-decoration:none;
+  }
+  .button.primary{border-color:transparent; background:linear-gradient(135deg,var(--teal),var(--teal-dim)); color:#06231f}
+  .status-strip{margin-top:44px; display:grid; grid-template-columns:auto 1fr; gap:18px; align-items:center; padding:19px 21px; border:1px solid var(--line); border-radius:var(--radius); background:rgba(16,23,32,.88)}
+  .status-count{font-size:2rem; font-weight:900; line-height:1; color:var(--amber)}
+  .status-copy strong{display:block}
+  .status-copy span{color:var(--muted); font-size:.94rem}
+  section{padding:62px 0; scroll-margin-top:84px}
+  section.alt{border-block:1px solid var(--line); background:var(--bg2)}
+  h2{max-width:780px; margin:.35rem 0 .9rem; font-size:clamp(1.8rem,4vw,2.65rem); line-height:1.08; letter-spacing:-.025em}
+  .intro{max-width:68ch; margin:0 0 28px; color:var(--muted)}
   .grid{display:grid; gap:16px}
-  .g3{grid-template-columns:repeat(3,1fr)}
-  .g2{grid-template-columns:repeat(2,1fr)}
-  @media(max-width:820px){ .g3,.g2{grid-template-columns:1fr} }
-  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:20px}
-  .card h3{margin:.1rem 0 .35rem; font-size:1.08rem}
+  .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .card{padding:22px; border:1px solid var(--line); border-radius:var(--radius); background:var(--card)}
+  .card .number{display:block; margin-bottom:18px; color:var(--amber); font-size:.82rem; font-weight:850; letter-spacing:.1em}
+  .card h3{margin:0 0 .45rem; font-size:1.1rem}
   .card p{margin:0; color:var(--muted); font-size:.95rem}
-  .watch a.card{display:block; text-decoration:none; transition:.15s}
-  .watch a.card:hover{border-color:var(--teal); transform:translateY(-2px)}
-  .watch .plat{font-weight:800; font-size:1.1rem}
-  .watch .h{color:var(--teal); font-size:.9rem; margin-top:4px}
-  /* schedule */
-  .flow{display:flex; flex-wrap:wrap; gap:10px}
-  .pill{background:var(--card); border:1px solid var(--line); border-radius:999px; padding:9px 15px; font-size:.9rem; color:var(--muted)}
-  .pill b{color:var(--ink)}
-  /* lanes */
-  .lane{border-left:3px solid var(--teal-dim)}
-  /* contact / footer */
-  .contact .card{text-align:center}
-  .contact a{color:var(--teal); font-weight:700; text-decoration:none}
-  footer{border-top:1px solid var(--line); color:var(--muted); padding:30px 0 50px; font-size:.9rem}
-  footer .wrap{display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap}
-  .es{color:var(--muted); font-style:italic}
+  .destination-card{display:block; text-decoration:none; transition:border-color .15s ease,transform .15s ease}
+  .destination-card:hover{border-color:var(--teal); transform:translateY(-2px)}
+  .destination-card .destination{display:block; margin-top:14px; color:var(--teal); font-size:.88rem; font-weight:800}
+  .field-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; padding:0; margin:26px 0 0; list-style:none}
+  .field-grid li{min-height:138px; padding:18px; border:1px solid var(--line); border-radius:14px; background:var(--card2)}
+  .field-grid strong{display:block; margin-bottom:7px; color:var(--teal)}
+  .field-grid span{color:var(--muted); font-size:.91rem}
+  .empty-state{display:grid; place-items:center; min-height:260px; padding:34px; border:1px dashed #466078; border-radius:var(--radius); background:linear-gradient(145deg,rgba(22,31,43,.92),rgba(16,23,32,.92)); text-align:center}
+  .empty-state .empty-mark{display:grid; width:56px; height:56px; margin-bottom:15px; place-items:center; border:1px solid rgba(45,212,191,.45); border-radius:16px; color:var(--teal); font-weight:900}
+  .empty-state h3{margin:0 0 8px; font-size:1.4rem}
+  .empty-state p{max-width:56ch; margin:0; color:var(--muted)}
+  .boundary{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+  .boundary .card:first-child{border-left:4px solid var(--teal)}
+  .boundary .card:last-child{border-left:4px solid var(--amber)}
+  .boundary ul{margin:14px 0 0; padding-left:20px; color:var(--muted)}
+  .boundary li+li{margin-top:7px}
+  footer{padding:34px 0 48px; border-top:1px solid var(--line); color:var(--muted); font-size:.91rem}
+  footer .wrap{display:flex; align-items:flex-start; justify-content:space-between; gap:24px}
+  footer p{margin:7px 0 0; max-width:56ch}
+  .footer-link{color:var(--teal); font-weight:800; text-decoration:none; white-space:nowrap}
+  @media(max-width:820px){
+    .grid.three,.field-grid{grid-template-columns:1fr 1fr}
+    .boundary{grid-template-columns:1fr}
+  }
+  @media(max-width:640px){
+    .wrap{width:min(100% - 32px,var(--max))}
+    .nav .wrap{align-items:flex-start; flex-direction:column; gap:7px; padding-block:10px}
+    .nav nav{width:100%; justify-content:space-between; gap:10px; overflow:visible; padding-bottom:3px; font-size:.78rem}
+    .nav nav a{white-space:nowrap}
+    .hero{padding:58px 0 44px}
+    .status-strip{grid-template-columns:1fr; gap:8px}
+    section{padding:48px 0; scroll-margin-top:112px}
+    .grid.three,.field-grid{grid-template-columns:1fr}
+    .field-grid li{min-height:0}
+    footer .wrap{flex-direction:column}
+  }
+  @media(max-width:360px){
+    .nav nav{display:grid; grid-template-columns:1fr 1fr; gap:5px 12px; font-size:.78rem}
+    .nav nav a{white-space:normal}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .destination-card{transition:none}
+    .destination-card:hover{transform:none}
+  }
 </style>
 </head>
 <body>
-
-<!-- ============================================================
-     EDIT THESE LINKS, THEN DEPLOY. Everything below reads from here.
-     ============================================================ -->
-<script>
-  const LINKS = {
-    youtube:  "https://youtube.com/@razonlab",
-    twitch:   "https://twitch.tv/razonlab",
-    x:        "https://x.com/Razonapp",
-    github:   "https://github.com/RazonIn4K",
-    davidtiz: "https://davidtiz.com"
-  };
-</script>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <header class="nav">
   <div class="wrap">
-    <div class="logo"><img src="favicon.png" alt="Razon Live Lab" style="width:30px;height:30px;border-radius:8px"> Razon Live Lab</div>
-    <nav>
-      <a href="#watch">Watch</a>
-      <a href="#schedule">Schedule</a>
-      <a href="#series">Series</a>
-      <a href="#contact">Contact</a>
+    <a class="logo" href="#top" aria-label="Razon Lab, back to top">
+      <img src="favicon.png" alt="">
+      <span>Razon Lab</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#method">Method</a>
+      <a href="#records">Records</a>
+      <a href="#channels">Channels</a>
+      <a href="#routing">Next step</a>
     </nav>
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Razon Live Lab</div>
-    <h1>Study, build, and secure AI&nbsp;systems live.</h1>
-    <p class="tag">Estudia, construye y asegura sistemas de IA en vivo. <span class="es">EN / ES.</span></p>
-    <p style="color:var(--ink);font-weight:700;margin:0 0 1rem"><span style="color:var(--teal)">●</span> Live Mon-Fri 6-8 PM CT on Twitch <span class="es">· En vivo lun-vie 6-8 PM CT</span></p>
-    <p class="lede">Learning programming from the ground up, live. Deep-work sessions and honest builds by David Ortiz / Razon.</p>
-    <div class="btns">
-      <a class="btn primary" data-link="twitch" href="#">▶ Watch on Twitch</a>
-      <a class="btn ghost" data-link="youtube" href="#">Watch on YouTube</a>
-      <a class="btn ghost" data-link="x" href="#">Follow on X</a>
+<main id="main-content">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="relationship">Public experiment ledger</div>
+      <h1>Experiments earn their claims here.</h1>
+      <p class="lede"><strong>Razon Lab is a public evidence ledger for AI, automation, and security tests.</strong> A result enters the ledger only when its conditions, uncertainty, supporting artifacts, and next question can be inspected together.
+        <span class="translation" lang="es">Experimentos de IA, automatización y seguridad con métodos, evidencia y límites explícitos.</span>
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#method">Inspect the publication standard</a>
+        <a class="button" href="#records">Review the experiment log</a>
+      </div>
+      <div class="status-strip" aria-label="Publication status">
+        <div class="status-count">0</div>
+        <div class="status-copy">
+          <strong>public experiment records</strong>
+          <span>Zero is intentional: no draft, stream, or prototype counts as a released record.</span>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="promise">
-  <div class="wrap">
-    <div class="card">
-      <div class="eyebrow">Operating rule</div>
-      <h3 style="font-size:1.3rem;margin:.4rem 0 .5rem"><strong>Public proof, private data protected.</strong></h3>
-      <p style="color:var(--muted);margin:0">I do not show client, school, private, or production data on stream. Demos use public-safe notes, dummy data, sandbox accounts, demo repos, and test-mode tools.</p>
+  <section class="alt" id="scope">
+    <div class="wrap">
+      <div class="eyebrow">Research boundary</div>
+      <h2>Test first. Decide later.</h2>
+      <p class="intro">This is where a narrow technical question becomes an inspectable test. Client promises, lessons, and general security conclusions stay outside the Lab record.</p>
+      <div class="grid three">
+        <article class="card">
+          <span class="number">01 · QUESTION</span>
+          <h3>Name the decision at stake</h3>
+          <p>Write one claim that evidence could overturn, then draw the boundary around the system being tested.</p>
+        </article>
+        <article class="card">
+          <span class="number">02 · PROTOCOL</span>
+          <h3>Make the run inspectable</h3>
+          <p>Capture the setup, versions, ordered steps, inputs, controls, and safe evidence another reviewer would need.</p>
+        </article>
+        <article class="card">
+          <span class="number">03 · CLAIM</span>
+          <h3>Bound the conclusion</h3>
+          <p>Keep direct observations apart from reproduction, inference, unknowns, failure conditions, and follow-up work.</p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="watch">
-  <div class="wrap">
-    <div class="eyebrow">Where to watch</div>
-    <h2>Catch the stream</h2>
-    <div class="grid g3 watch">
-      <a class="card" data-link="youtube" href="#"><div class="plat">YouTube</div><div class="h">youtube.com/@razonlab</div><p style="margin-top:8px">Full streams, AI News Desk recaps, and build VODs.</p></a>
-      <a class="card" data-link="twitch" href="#"><div class="plat">Twitch</div><div class="h">twitch.tv/razonlab</div><p style="margin-top:8px">Live deep-work blocks and real-time Q&amp;A.</p></a>
-      <a class="card" data-link="x" href="#"><div class="plat">X</div><div class="h">x.com/Razonapp</div><p style="margin-top:8px">Clips, threads, and go-live announcements.</p></a>
+  <section id="method">
+    <div class="wrap">
+      <div class="eyebrow">Publication standard</div>
+      <h2>A result is not yet a record.</h2>
+      <p class="intro">Publication waits until the result can be read beside the conditions that produced it. A second run in another environment gets its own provenance instead of inheriting the first result.</p>
+      <ol class="field-grid">
+        <li><strong>Date</strong><span>When this exact version entered the public ledger.</span></li>
+        <li><strong>Environment and versions</strong><span>The hardware, runtime, model, libraries, and services that shaped the run.</span></li>
+        <li><strong>Hypothesis</strong><span>A bounded claim written so that the evidence can disprove it.</span></li>
+        <li><strong>Method</strong><span>The sequence, inputs, comparison points, controls, and stop rules used.</span></li>
+        <li><strong>Observed result</strong><span>The output of the run, reported without extending beyond what was directly seen.</span></li>
+        <li><strong>Evidence status</strong><span>Label the entry as observed or reproduced; otherwise state whether it is inferred, inconclusive, or unverified.</span></li>
+        <li><strong>Limitations</strong><span>The gaps, conditions, failure modes, and unknowns that narrow the result.</span></li>
+        <li><strong>Artifacts</strong><span>Safe logs, code, fixtures, captures, or sources that let a reviewer inspect the claim.</span></li>
+        <li><strong>Next test</strong><span>Name the most valuable follow-up: one that could reinforce the result, restrict its scope, or disprove it.</span></li>
+      </ol>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="schedule" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <div class="eyebrow">Schedule</div>
-    <h2>Live Mon-Fri, 6:00-8:00 PM Central (CT)</h2>
-    <p style="margin:-6px 0 10px;color:var(--muted)"><span class="es">En vivo de lunes a viernes, 6:00-8:00 PM, hora del Centro (CT).</span></p>
-    <p style="margin:6px 0 14px;color:var(--muted)">Live on <a data-link="twitch" href="#">Twitch</a>, with VODs and explainers on <a data-link="youtube" href="#">YouTube</a>. Follow on <a data-link="twitch" href="#">Twitch</a> to get notified when the stream goes live.</p>
-    <h3 style="margin:18px 0 10px">Typical format</h3>
-    <div class="flow">
-      <span class="pill"><b>1</b> · Starting Soon + Today's Question</span>
-      <span class="pill"><b>2</b> · Initial model, out loud</span>
-      <span class="pill"><b>3</b> · Attempt (deep work)</span>
-      <span class="pill"><b>4</b> · Abstraction check</span>
-      <span class="pill"><b>5</b> · Where it broke</span>
-      <span class="pill"><b>6</b> · Updated model + Q&amp;A</span>
+  <section class="alt" id="records">
+    <div class="wrap">
+      <div class="eyebrow">Experiment log</div>
+      <h2>Published records</h2>
+      <div class="empty-state">
+        <div class="empty-mark" aria-hidden="true">00</div>
+        <h3>The public experiment ledger is intentionally empty.</h3>
+        <p>No stream, prototype, benchmark, security impact, or production outcome should be inferred from this zero-record state.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="series">
-  <div class="wrap">
-    <div class="eyebrow">The series</div>
-    <h2>Raw Dogging Programming</h2>
-    <p class="sub" style="color:var(--ink);font-weight:600;max-width:none">Learning programming without hiding behind the abstractions.<br><span class="es">Aprendiendo a programar sin esconderme detras de las abstracciones.</span></p>
-    <p class="sub">I'm learning programming from the ground up, live. No pretending I understand an abstraction until I can explain it without looking. Each session follows the same loop:</p>
-    <div class="flow">
-      <span class="pill"><b>1</b> · Question</span>
-      <span class="pill"><b>2</b> · Initial model</span>
-      <span class="pill"><b>3</b> · Attempt</span>
-      <span class="pill"><b>4</b> · Abstraction check</span>
-      <span class="pill"><b>5</b> · Where it broke</span>
-      <span class="pill"><b>6</b> · Updated model</span>
+  <section id="boundary">
+    <div class="wrap">
+      <div class="eyebrow">Publication boundary</div>
+      <h2>Useful evidence, without unsafe exposure.</h2>
+      <div class="boundary">
+        <article class="card">
+          <h3>Publishable</h3>
+          <ul>
+            <li>Public-safe methods, dummy data, sandbox fixtures, and reproducible test conditions.</li>
+            <li>Observed failures, inconclusive results, stated uncertainty, and sanitized artifacts.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Excluded</h3>
+          <ul>
+            <li>Client, school, private, production, credential, or provider-sensitive data.</li>
+            <li>Commercial intake, beginner curriculum, unsupported impact claims, and unverified event schedules.</li>
+          </ul>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <div class="eyebrow">Related work</div>
-    <h2>Related work by David</h2>
-    <div class="grid g2">
-      <div class="card lane"><h3>PromptDefenders</h3><p>AI security, prompt-injection defense, and agent-safety templates.</p></div>
-      <div class="card lane"><h3>High Encode Learning</h3><p>The commercial studio: local-business websites, automations, and lead capture.</p></div>
-      <div class="card lane"><h3>CSBrain AI</h3><p>Public notes, mind maps, and RAG experiments.</p></div>
-      <div class="card lane"><h3>DavidTiz</h3><p>Portfolio and commercial work. Hiring inquiries go here. <a data-link="davidtiz" href="#" style="color:var(--teal);text-decoration:none">davidtiz.com →</a></p></div>
+  <section class="alt" id="channels">
+    <div class="wrap">
+      <div class="eyebrow">Current public channels</div>
+      <h2>Working notes can be public without becoming evidence.</h2>
+      <p class="intro">These are the current Razon Live Lab channel destinations. Each platform is the source for its own availability. A stream, upload, or post enters the experiment ledger only after it meets the publication standard above.</p>
+      <div class="grid three">
+        <a class="card destination-card" href="https://www.youtube.com/@razonlab" target="_blank" rel="noopener noreferrer">
+          <h3>YouTube</h3>
+          <p>Razon Live Lab channel.</p>
+          <span class="destination">Open YouTube ↗</span>
+        </a>
+        <a class="card destination-card" href="https://www.twitch.tv/razonlab" target="_blank" rel="noopener noreferrer">
+          <h3>Twitch</h3>
+          <p>RazonLab channel.</p>
+          <span class="destination">Open Twitch ↗</span>
+        </a>
+        <a class="card destination-card" href="https://x.com/Razonapp" target="_blank" rel="noopener noreferrer">
+          <h3>X</h3>
+          <p>Razon Live Lab at @Razonapp.</p>
+          <span class="destination">Open X ↗</span>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact" class="contact">
-  <div class="wrap">
-    <div class="card">
-      <div class="eyebrow">Contact</div>
-      <h2 style="margin:.4rem 0 .3rem">For work, collabs, or questions</h2>
-      <p style="color:var(--muted);margin:0 0 .6rem">Drop a line. I read everything.</p>
-      <a href="mailto:hello@razonlab.com">hello@razonlab.com</a>
+  <section id="routing">
+    <div class="wrap">
+      <div class="eyebrow">Intent routing</div>
+      <h2>Use the front door that matches the question.</h2>
+      <p class="intro">These links are destinations only. Their presence does not define a legal, business, payment, contractual, or organizational relationship.</p>
+      <div class="grid three">
+        <a class="card destination-card" href="https://davidtiz.com/">
+          <h3>DavidTiz</h3>
+          <p>David Ortiz's personal portfolio and context for collaboration, speaking, and peer work.</p>
+          <span class="destination">Open the personal portfolio ↗</span>
+        </a>
+        <a class="card destination-card" href="https://razonworks.com/">
+          <h3>RazonWorks</h3>
+          <p>Open the current RazonWorks website.</p>
+          <span class="destination">Visit RazonWorks ↗</span>
+        </a>
+        <a class="card destination-card" href="https://highencodelearning.com/">
+          <h3>High Encode Learning</h3>
+          <p>Open the current High Encode Learning website.</p>
+          <span class="destination">Visit High Encode Learning ↗</span>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <footer>
   <div class="wrap">
     <div>
-      <div class="logo" style="margin-bottom:6px"><img src="favicon.png" alt="Razon Live Lab" style="width:30px;height:30px;border-radius:8px"> Razon Live Lab</div>
-      <div>Study, build, and secure AI systems live. <span class="es">EN / ES.</span></div>
+      <a class="logo" href="#top">
+        <img src="favicon.png" alt="">
+        <span>Razon Lab</span>
+      </a>
+      <p>Razon Lab is an evidence-led experiment ledger. The standalone domain is not a service, course, or personal-portfolio directory.</p>
     </div>
-    <div style="text-align:right">
-      <div>by David Ortiz / Razon</div>
-      <div><a data-link="davidtiz" href="#" style="color:var(--muted)">davidtiz.com</a> · <a href="mailto:hello@razonlab.com" style="color:var(--muted)">hello@razonlab.com</a></div>
-    </div>
+    <a class="footer-link" href="https://davidtiz.com/">Personal and collaboration ↗</a>
   </div>
 </footer>
-
-<script>
-  // Wire every [data-link] element to the LINKS config above.
-  document.querySelectorAll('[data-link]').forEach(function(el){
-    var url = LINKS[el.getAttribute('data-link')];
-    if(!url) return;
-    el.setAttribute('href', url);
-    if(url.indexOf('http') === 0){ el.setAttribute('target','_blank'); el.setAttribute('rel','noopener'); }
-  });
-</script>
-<!-- Analytics: paste your Cloudflare Web Analytics or Plausible snippet just above </body>. -->
 </body>
 </html>
