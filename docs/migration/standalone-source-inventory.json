@@ -88,6 +88,14 @@
     {
       "path": "og.png",
       "sha256": "16b2238d638d3bf6f351a5cec8b3eada1155bb903b8b97bd167f51e99f8d3922"
+    },
+    {
+      "path": "robots.txt",
+      "sha256": "f3b27746470023d16304d1c374a56ffd8c63b25a01ac1d0809d0edf7daf5c424"
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "30e800ce6b46c58bad60fabd9b728018034c1fb64fc6688aef5bbff83a4d8015"
     }
   ],
   "artifacts": [
@@ -230,6 +238,16 @@
       "destination": "Use analytics only after a separately approved consent, privacy, and evidence contract is selected.",
       "evidenceStatus": "source-observed",
       "followUp": "Do not infer that Cloudflare Web Analytics or Plausible is installed from the placeholder."
+    },
+    {
+      "id": "discovery-files",
+      "kind": "search-discovery",
+      "source": "robots.txt and sitemap.xml",
+      "selectors": ["robots.txt Sitemap directive", "sitemap.xml loc"],
+      "classification": "rewrite",
+      "destination": "Publish one crawlable standalone canonical and its sitemap without selecting a sibling-site or migration destination.",
+      "evidenceStatus": "source-observed",
+      "followUp": "Change the crawler policy or sitemap only with a separately reviewed canonical or redirect decision."
     }
   ]
 }

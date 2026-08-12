@@ -63,13 +63,15 @@ Do not turn a local demonstration into a claim about production systems, populat
 
 ## Current repository status
 
-This repository contains a self-contained `index.html`, `favicon.png`, and
-`og.png`. The current source candidate identifies Razon Lab as an evidence-led
+This repository contains a self-contained `index.html`, `favicon.png`,
+`og.png`, `robots.txt`, and `sitemap.xml`. The current source candidate
+identifies Razon Lab as an evidence-led
 experiment ledger, exposes the evidence contract, and presents an explicit
 zero-record state. It retires learning-in-public, recurring availability,
 generic channel-directory, broad contact, and unsupported identity-schema
 claims. It restores only channel destinations verified on 2026-08-12 and keeps
-the sibling-site links classification-neutral.
+the sibling-site links classification-neutral. Its crawler policy and sitemap
+publish only the standalone `https://razonlab.com/` canonical.
 
 The source inventory at
 `docs/migration/standalone-source-inventory.json` now pins the preserved source
@@ -87,8 +89,9 @@ The hosting and domain details in the README are repository records. They were n
 - Candidate `/lab` routes exist in local source elsewhere. Their target role,
   preview state, and production state remain unverified here.
 - Neither Phase 0 nor the standalone source candidate deploys or hosts a replacement route.
-- The source candidate changes `index.html` and `og.png`; Vercel configuration,
-  DNS, and the standalone domain remain unchanged by this repository work.
+- The source candidate changes `index.html` and `og.png` and adds `robots.txt`
+  and `sitemap.xml`; Vercel configuration, DNS, and the standalone domain
+  remain unchanged by this repository work.
 - `https://razonlab.com/` remains the standalone canonical until a redirect is
   separately approved and completed.
 - No redirect from `razonlab.com` is authorized until a destination is selected,

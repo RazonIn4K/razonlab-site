@@ -31,6 +31,7 @@ const requiredArtifactIds = [
   "favicon",
   "social-image",
   "analytics-placeholder",
+  "discovery-files",
 ];
 
 const allowedClassifications = new Set([
@@ -86,7 +87,7 @@ test("preserves hashes for every pinned source runtime file", () => {
 test("matches every local source candidate file to its recorded digest", async () => {
   assert.deepEqual(
     inventory.candidateRuntimeFiles.map((file) => file.path).sort(),
-    ["favicon.png", "index.html", "og.png"],
+    ["favicon.png", "index.html", "og.png", "robots.txt", "sitemap.xml"],
   );
 
   for (const file of inventory.candidateRuntimeFiles) {
@@ -136,6 +137,12 @@ test("keeps the standalone canonical until an authorized redirect", () => {
   const metadata = inventory.artifacts.find((artifact) => artifact.id === "metadata");
   assert.match(metadata.destination, /Keep https:\/\/razonlab\.com\/ canonical/);
   assert.match(metadata.followUp, /change the canonical only with an authorized redirect/i);
+
+  const discovery = inventory.artifacts.find(
+    (artifact) => artifact.id === "discovery-files",
+  );
+  assert.match(discovery.destination, /one crawlable standalone canonical/i);
+  assert.match(discovery.followUp, /canonical or redirect decision/i);
 });
 
 test("does not freeze unresolved ownership or sibling classifications", () => {
