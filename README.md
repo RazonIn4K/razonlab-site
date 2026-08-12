@@ -83,7 +83,7 @@ Do not deploy, connect Git, change Vercel settings, alter DNS, delete the standa
 
 ## Source-candidate validation
 
-For this stacked source packet:
+For this source packet:
 
 ```bash
 node --test tests/*.test.mjs

@@ -89,8 +89,9 @@ The hosting and domain details in the README are repository records. They were n
 - Candidate `/lab` routes exist in local source elsewhere. Their target role,
   preview state, and production state remain unverified here.
 - Neither Phase 0 nor the standalone source candidate deploys or hosts a replacement route.
-- The source candidate changes `index.html` and `og.png`; Vercel configuration,
-  DNS, and the standalone domain remain unchanged by this repository work.
+- The source candidate changes `index.html` and `og.png` and adds `robots.txt`
+  and `sitemap.xml`; Vercel configuration, DNS, and the standalone domain
+  remain unchanged by this repository work.
 - `https://razonlab.com/` remains the standalone canonical until a redirect is
   separately approved and completed.
 - No redirect from `razonlab.com` is authorized until a destination is selected,
