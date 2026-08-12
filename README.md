@@ -1,35 +1,32 @@
 # Razon Lab Migration Source
 
-This repository preserves the standalone Razon Live Lab source while useful material is evaluated for migration. The selected portfolio role is Razon Lab, the experimental research and prototyping arm of RazonWorks.
+This repository preserves the standalone Razon Live Lab source while useful material is evaluated for migration. The selected source role is an evidence-led Razon Lab experiment ledger.
 
 The repository remains a static site with one self-contained HTML file and no
 build step. The current source candidate replaces the learning-and-broadcast
 presentation with an evidence-led Lab boundary and a zero-record experiment
 ledger. It keeps only public channel destinations verified on 2026-08-12,
-without a recurring availability claim, and routes personal, commercial, and
-learning intent to their current public surfaces. It also replaces the outdated
-live-stream social card. These are source changes only; no hosting, domain, or
-redirect behavior has been changed here.
+without a recurring availability claim, and keeps sibling-site links
+classification-neutral. It also replaces the outdated live-stream social card.
+These are source changes only; no hosting, domain, or redirect behavior has
+been changed here.
 
 ## Brand role
 
 - **Audience:** technical peers, builders, and security researchers.
 - **Job:** make an experiment, benchmark, writeup, or demo inspectable.
 - **Proof:** method, environment, observations, limitations, evidence status, and reproducible artifacts.
-- **Not owned here:** commercial services and client intake, beginner curriculum, or David's personal portfolio and contact hub.
+- **Not represented here:** service intake, curriculum, or David's personal portfolio and contact hub.
 
-RazonWorks is the current public route for commercial project requests. High
-Encode Learning is the current learning surface for structured lessons and
-guided practice. DavidTiz is the current personal portfolio and collaboration
-surface. Full experimental research artifacts belong to Razon Lab as part of
-RazonWorks.
+DavidTiz is the current personal portfolio and collaboration surface.
+RazonWorks and High Encode Learning are retained only as verified public-site
+destinations. Their presence does not classify a legal, ownership, commercial,
+learning, payment, contract, domain, replacement, or organizational
+relationship.
 
-This source does not decide the unresolved legal or public identity relationship
-between RazonWorks and High Encode Learning. Do not infer an entity, DBA,
-payment, contract, domain-ownership, or replacement relationship from these
-links.
-
-The canonical portfolio decision and contract live in the `RazonIn4K/razonworks` repository at `docs/adr/0039-portfolio-brand-and-content-ownership.md`, `docs/brand/portfolio-charter.md`, and `docs/brand/content-ownership-ledger.md`. Read [docs/BRAND-BOUNDARY.md](docs/BRAND-BOUNDARY.md) for the local evidence and migration rules.
+The unresolved identity decision is tracked in `RazonIn4K/razonworks#160`.
+Read [docs/BRAND-BOUNDARY.md](docs/BRAND-BOUNDARY.md) for the local evidence and
+migration rules.
 
 ## Files
 
@@ -39,8 +36,7 @@ The canonical portfolio decision and contract live in the `RazonIn4K/razonworks`
   2026-08-12 from the repository's prior `og.png` as an edit reference, then
   downscaled and losslessly optimized locally. The generated visual contains
   no third-party media, people, customer material, or externally licensed
-  assets; repository ownership and final publication approval remain with the
-  project owner.
+  assets. The recorded provenance does not replace final publication approval.
 - `docs/BRAND-BOUNDARY.md`: target brand contract, evidence standard, and migration guardrails.
 - `docs/migration/standalone-source-inventory.json`: source revision, runtime
   hashes, artifact classifications, and required follow-up evidence.
@@ -61,18 +57,19 @@ the content of any post or stream.
 - Twitch: `https://www.twitch.tv/razonlab` (`RazonLab`)
 - X: `https://x.com/Razonapp` (`Razon Live Lab`, `@Razonapp`)
 - DavidTiz: `https://davidtiz.com/` (personal portfolio)
-- RazonWorks: `https://razonworks.com/request` (commercial request route)
-- High Encode Learning: `https://highencodelearning.com/` (learning surface)
+- RazonWorks: `https://razonworks.com/` (verified current website destination; classification-neutral)
+- High Encode Learning: `https://highencodelearning.com/` (verified current website destination; classification-neutral)
 
-## Planned destination
+## Candidate migration state
 
-RazonWorks `/lab` and `/es/lab` exist in local source as of 2026-08-10. This
-repository has not verified a preview or production deployment. Do not describe
-the routes as live.
+Candidate `/lab` and `/es/lab` routes exist in separate local source as of
+2026-08-10. This repository has not selected a migration destination or
+verified a preview or production deployment. Do not describe the routes as live
+or infer their relationship to this standalone site.
 
-No standalone-domain redirect is authorized until both routes are hosted,
-their English and Spanish behavior is verified there, useful source material
-is preserved, and the user approves the cutover.
+No standalone-domain redirect is authorized until a destination is selected,
+its hosted behavior is verified, useful source material is preserved, the
+identity decision is resolved, and the user approves the cutover.
 
 ## Hosting record and change control
 

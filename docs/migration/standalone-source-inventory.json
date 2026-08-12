@@ -3,9 +3,10 @@
   "inventoryDate": "2026-08-10",
   "sourceRepository": "RazonIn4K/razonlab-site",
   "sourceRevision": "4ee09a343c10f3ff5177f617193585640f067aab",
-  "targetRepository": "RazonIn4K/razonworks",
-  "targetRoutes": ["/lab", "/es/lab"],
+  "targetRepository": null,
+  "targetRoutes": [],
   "targetHostedState": "unverified",
+  "identityDecision": "RazonIn4K/razonworks#160",
   "candidateDate": "2026-08-12",
   "candidateStatus": "local-source-only",
   "candidateDeploymentAuthorized": false,
@@ -45,20 +46,20 @@
       "claimBoundary": "Personal and collaboration routing only."
     },
     {
-      "id": "commercial",
-      "url": "https://razonworks.com/request",
-      "publicIdentity": "RazonWorks request a consultation",
+      "id": "razonworks",
+      "url": "https://razonworks.com/",
+      "publicIdentity": "RazonWorks",
       "verifiedAt": "2026-08-12",
       "evidenceStatus": "external-observed",
-      "claimBoundary": "Commercial project routing only; no legal identity inference."
+      "claimBoundary": "Classification-neutral current website destination; no relationship is asserted."
     },
     {
-      "id": "learning",
+      "id": "high-encode",
       "url": "https://highencodelearning.com/",
       "publicIdentity": "High Encode Learning",
       "verifiedAt": "2026-08-12",
       "evidenceStatus": "external-observed",
-      "claimBoundary": "Current learning-surface routing only; no relationship to RazonWorks is asserted."
+      "claimBoundary": "Classification-neutral current website destination; no relationship is asserted."
     }
   ],
   "preservedRuntimeFiles": [
@@ -78,7 +79,7 @@
   "candidateRuntimeFiles": [
     {
       "path": "index.html",
-      "sha256": "d3f81ace94a09eefd8aa2cbbd31ff4080335dd3c935a13a35462e198913d767e"
+      "sha256": "f2031989dcb0b2fd96dff49968e5bc9fc6c0cb76e02eb8ff02fcd8fa175e60f3"
     },
     {
       "path": "favicon.png",
@@ -96,9 +97,9 @@
       "source": "index.html head title, description, Open Graph, theme color, and favicon declarations",
       "selectors": ["title", "meta[name=description]", "meta[property^=og]", "meta[name=theme-color]"],
       "classification": "rewrite",
-      "destination": "Use route-specific Lab metadata without an unverified broadcast schedule or standalone canonical claim.",
+      "destination": "Use standalone Lab metadata without an unverified broadcast schedule or identity relationship claim. Keep https://razonlab.com/ canonical until an authorized redirect is completed.",
       "evidenceStatus": "source-observed",
-      "followUp": "Verify hosted RazonWorks canonicals and social assets before publishing or redirecting."
+      "followUp": "Verify the standalone canonical and social assets before publishing; change the canonical only with an authorized redirect."
     },
     {
       "id": "structured-identity",
@@ -106,9 +107,9 @@
       "source": "Organization, Person, and WebSite nodes in the JSON-LD graph",
       "selectors": ["script[type=application/ld+json]"],
       "classification": "rewrite",
-      "destination": "Model Razon Lab as the experimental arm of RazonWorks with only verified identity links.",
+      "destination": "Model the standalone Lab only as an evidence-led experiment ledger without publisher, owner, parent, or sibling classifications.",
       "evidenceStatus": "source-observed",
-      "followUp": "Review publisher, founder, job-title, sameAs, language, and ownership assertions against current evidence."
+      "followUp": "Keep publisher, founder, job-title, sameAs, ownership, and organizational relationship assertions out until independently authorized."
     },
     {
       "id": "structured-broadcast",
@@ -138,7 +139,7 @@
       "classification": "retire",
       "destination": "Do not migrate the historical recurring schedule or notification claim.",
       "evidenceStatus": "claim-unverified",
-      "followUp": "Treat any future schedule as a new reviewed artifact with a current owner and dated evidence."
+      "followUp": "Treat any future schedule as a new reviewed artifact with a responsible maintainer and dated evidence."
     },
     {
       "id": "stream-loop",
@@ -148,7 +149,7 @@
       "classification": "preserve",
       "destination": "Adapt the six-step loop as a method field or experiment template, not proof that a broadcast occurred.",
       "evidenceStatus": "source-observed",
-      "followUp": "Remove duplicated wording and localize the method completely in the paired routes."
+      "followUp": "Remove duplicated wording and localize the method completely in any later destination."
     },
     {
       "id": "safety-rule",
@@ -186,7 +187,7 @@
       "source": "hello@razonlab.com and broad work, collaboration, and question invitation",
       "selectors": ["#contact", "footer"],
       "classification": "rewrite",
-      "destination": "Route personal or collaboration intent to DavidTiz and commercial project intent to the live RazonWorks request route; omit unresolved research email contact.",
+      "destination": "Route personal or collaboration intent to DavidTiz; keep sibling-site links classification-neutral and omit unresolved research email contact.",
       "evidenceStatus": "external-unverified",
       "followUp": "Classify contact intent and verify the chosen destination before adding a public action."
     },
@@ -206,7 +207,7 @@
       "source": "favicon.png",
       "selectors": ["link[rel=icon]", "header img", "footer img"],
       "classification": "preserve",
-      "destination": "Retain as a provenance asset until the RazonWorks identity review decides its final use.",
+      "destination": "Retain as a provenance asset until the identity decision in issue #160 settles its final use.",
       "evidenceStatus": "asset-hash-observed",
       "followUp": "Check contrast, sizes, license, and integrated-brand fit before publication."
     },
@@ -216,7 +217,7 @@
       "source": "og.png",
       "selectors": ["meta[property=og\\:image]"],
       "classification": "rewrite",
-      "destination": "Create route-owned Lab social art only after title and evidence framing are approved.",
+      "destination": "Create dedicated Lab social art only after title and evidence framing are approved.",
       "evidenceStatus": "asset-hash-observed",
       "followUp": "Preserve the original digest for provenance and verify the replacement at 1200 x 630."
     },
@@ -226,7 +227,7 @@
       "source": "Final HTML comment suggesting a future analytics snippet",
       "selectors": ["final Analytics HTML comment"],
       "classification": "retire",
-      "destination": "Use only RazonWorks-approved analytics with its existing consent and evidence contracts.",
+      "destination": "Use analytics only after a separately approved consent, privacy, and evidence contract is selected.",
       "evidenceStatus": "source-observed",
       "followUp": "Do not infer that Cloudflare Web Analytics or Plausible is installed from the placeholder."
     }

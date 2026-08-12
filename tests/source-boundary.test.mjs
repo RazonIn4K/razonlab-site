@@ -6,6 +6,17 @@ import { fileURLToPath } from "node:url";
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const html = await readFile(path.join(repositoryRoot, "index.html"), "utf8");
+const governanceText = (
+  await Promise.all(
+    [
+      "index.html",
+      "AGENTS.md",
+      "README.md",
+      "docs/BRAND-BOUNDARY.md",
+      "docs/migration/standalone-source-inventory.json",
+    ].map((file) => readFile(path.join(repositoryRoot, file), "utf8")),
+  )
+).join("\n");
 
 function attributeValues(name) {
   return [...html.matchAll(new RegExp(`\\s${name}="([^"]*)"`, "g"))].map(
@@ -13,8 +24,8 @@ function attributeValues(name) {
   );
 }
 
-test("publishes the standalone Lab relationship and evidence contract", () => {
-  assert.match(html, /Experimental research arm of RazonWorks/);
+test("publishes the standalone Lab evidence contract", () => {
+  assert.match(html, /Public experiment ledger/);
   assert.match(html, /Experiments earn their claims here\./);
   assert.match(html, /A result is not yet a record\./);
   assert.match(html, /The public experiment ledger is intentionally empty\./);
@@ -54,8 +65,20 @@ test("removes unverified broadcast, cadence, email, and identity assertions", ()
     "mailto:",
     "data-link",
     "High Encode Learning LLC",
+    "experimental research arm of RazonWorks",
+    "research arm of RazonWorks",
+    "Commercial services",
+    "Commercial requests",
+    "commercial project",
+    "learning surface",
+    "guided practice",
+    "owner-link",
   ]) {
-    assert.equal(html.includes(forbidden), false, `found retired assertion: ${forbidden}`);
+    assert.equal(
+      html.toLowerCase().includes(forbidden.toLowerCase()),
+      false,
+      `found retired assertion: ${forbidden}`,
+    );
   }
 });
 
@@ -73,14 +96,40 @@ test("publishes only the verified public channel destinations without cadence cl
   assert.match(html, /only after it meets the publication standard above\./);
 });
 
-test("routes personal, commercial, and learning intent without legal inference", () => {
+test("keeps sibling links classification-neutral and personal routing explicit", () => {
   assert.match(html, /href="https:\/\/davidtiz\.com\/"/);
-  assert.match(html, /href="https:\/\/razonworks\.com\/request"/);
+  assert.match(html, /href="https:\/\/razonworks\.com\/"/);
   assert.match(html, /href="https:\/\/highencodelearning\.com\/"/);
   assert.match(html, /personal portfolio and context for collaboration/);
-  assert.match(html, /Commercial services and a scoped project request\./);
-  assert.match(html, /Structured lessons and guided practice grounded in real builds\./);
-  assert.doesNotMatch(html, /High Encode Learning (?:is|as|belongs|operates) (?:a|an|the|under)/i);
+  assert.match(html, /Open the current RazonWorks website\./);
+  assert.match(html, /Open the current High Encode Learning website\./);
+  assert.match(html, /does not define a legal, business, payment, contractual, or organizational relationship\./);
+  assert.doesNotMatch(html, /RazonWorks (?:is|as|belongs|operates|owns) (?:a|an|the|under)/i);
+  assert.doesNotMatch(html, /High Encode Learning (?:is|as|belongs|operates|owns) (?:a|an|the|under)/i);
+});
+
+test("forbids the frozen sibling ownership and role classifications", () => {
+  for (const forbidden of [
+    "experimental research arm of RazonWorks",
+    "experimental research and prototyping arm of RazonWorks",
+    "experimental arm of RazonWorks",
+    "as part of RazonWorks",
+    "RazonWorks owns",
+    "RazonWorks is the only owner",
+    "RazonWorks is the current public route for commercial",
+    "current RazonWorks request surface",
+    "Commercial project routing",
+    "High Encode Learning owns",
+    "High Encode Learning is the current learning surface",
+    "current learning surface for structured lessons",
+    "learning-surface routing",
+  ]) {
+    assert.equal(
+      governanceText.toLowerCase().includes(forbidden.toLowerCase()),
+      false,
+      `frozen governance classification: ${forbidden}`,
+    );
+  }
 });
 
 test("uses minimal, non-duplicated WebSite and WebPage schema", () => {
@@ -119,7 +168,7 @@ test("keeps discovery metadata and outbound navigation bounded", () => {
         href === "https://www.twitch.tv/razonlab" ||
         href === "https://x.com/Razonapp" ||
         href === "https://davidtiz.com/" ||
-        href === "https://razonworks.com/request" ||
+        href === "https://razonworks.com/" ||
         href === "https://highencodelearning.com/",
       `unexpected link destination: ${href}`,
     );

@@ -47,15 +47,17 @@ const allowedEvidenceStatuses = new Set([
   "claim-unverified",
 ]);
 
-test("pins the preserved runtime source and paired local target routes", () => {
+test("pins the preserved runtime source without selecting a migration owner", () => {
   assert.equal(inventory.schemaVersion, 2);
   assert.match(inventory.sourceRevision, /^[0-9a-f]{40}$/);
   assert.equal(
     inventory.sourceRevision,
     "4ee09a343c10f3ff5177f617193585640f067aab",
   );
-  assert.deepEqual(inventory.targetRoutes, ["/lab", "/es/lab"]);
+  assert.equal(inventory.targetRepository, null);
+  assert.deepEqual(inventory.targetRoutes, []);
   assert.equal(inventory.targetHostedState, "unverified");
+  assert.equal(inventory.identityDecision, "RazonIn4K/razonworks#160");
   assert.equal(inventory.candidateStatus, "local-source-only");
   assert.equal(inventory.candidateDeploymentAuthorized, false);
   assert.equal(inventory.candidateRedirectAuthorized, false);
@@ -99,7 +101,7 @@ test("matches every local source candidate file to its recorded digest", async (
 test("records the bounded external-link verification", () => {
   assert.deepEqual(
     inventory.candidateExternalLinks.map((link) => link.id),
-    ["youtube", "twitch", "x", "personal", "commercial", "learning"],
+    ["youtube", "twitch", "x", "personal", "razonworks", "high-encode"],
   );
   assert.deepEqual(
     inventory.candidateExternalLinks.map((link) => link.url),
@@ -108,7 +110,7 @@ test("records the bounded external-link verification", () => {
       "https://www.twitch.tv/razonlab",
       "https://x.com/Razonapp",
       "https://davidtiz.com/",
-      "https://razonworks.com/request",
+      "https://razonworks.com/",
       "https://highencodelearning.com/",
     ],
   );
@@ -120,8 +122,33 @@ test("records the bounded external-link verification", () => {
     assert.ok(link.claimBoundary.trim());
   }
 
-  const learning = inventory.candidateExternalLinks.find((link) => link.id === "learning");
-  assert.match(learning.claimBoundary, /no relationship to RazonWorks is asserted/i);
+  for (const id of ["razonworks", "high-encode"]) {
+    const link = inventory.candidateExternalLinks.find((item) => item.id === id);
+    assert.match(link.claimBoundary, /classification-neutral/i);
+    assert.match(link.claimBoundary, /no relationship is asserted/i);
+  }
+});
+
+test("keeps the standalone canonical until an authorized redirect", () => {
+  assert.equal(inventory.candidateCanonical, "https://razonlab.com/");
+  assert.equal(inventory.candidateRedirectAuthorized, false);
+
+  const metadata = inventory.artifacts.find((artifact) => artifact.id === "metadata");
+  assert.match(metadata.destination, /Keep https:\/\/razonlab\.com\/ canonical/);
+  assert.match(metadata.followUp, /change the canonical only with an authorized redirect/i);
+});
+
+test("does not freeze unresolved ownership or sibling classifications", () => {
+  const serialized = JSON.stringify(inventory);
+  for (const forbidden of [
+    "experimental arm of RazonWorks",
+    "experimental research arm of RazonWorks",
+    "Commercial project routing",
+    "learning-surface routing",
+    "Use only RazonWorks-approved analytics",
+  ]) {
+    assert.equal(serialized.includes(forbidden), false, `frozen classification: ${forbidden}`);
+  }
 });
 
 test("classifies every required source artifact with a fail-closed follow-up", () => {
