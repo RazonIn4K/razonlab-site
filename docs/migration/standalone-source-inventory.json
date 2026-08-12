@@ -3,10 +3,12 @@
   "inventoryDate": "2026-08-10",
   "sourceRepository": "RazonIn4K/razonlab-site",
   "sourceRevision": "4ee09a343c10f3ff5177f617193585640f067aab",
-  "targetRepository": null,
-  "targetRoutes": [],
+  "targetRepository": "RazonIn4K/razonworks",
+  "targetRoutes": ["/lab", "/es/lab"],
   "targetHostedState": "unverified",
+  "publicContentRole": "Experimental research arm of RazonWorks",
   "identityDecision": "RazonIn4K/razonworks#160",
+  "identityBoundary": "The accepted public content role does not decide the legal contracting party, merchant and payment recipient, DBA status, privacy data controller, or RazonWorks-High Encode relationship.",
   "candidateDate": "2026-08-12",
   "candidateStatus": "local-source-only",
   "candidateDeploymentAuthorized": false,
@@ -46,20 +48,20 @@
       "claimBoundary": "Personal and collaboration routing only."
     },
     {
-      "id": "razonworks",
-      "url": "https://razonworks.com/",
-      "publicIdentity": "RazonWorks",
+      "id": "commercial",
+      "url": "https://razonworks.com/request",
+      "publicIdentity": "RazonWorks request a consultation",
       "verifiedAt": "2026-08-12",
       "evidenceStatus": "external-observed",
-      "claimBoundary": "Classification-neutral current website destination; no relationship is asserted."
+      "claimBoundary": "Commercial project routing only; legal contracting and payment roles unresolved."
     },
     {
-      "id": "high-encode",
+      "id": "learning",
       "url": "https://highencodelearning.com/",
       "publicIdentity": "High Encode Learning",
       "verifiedAt": "2026-08-12",
       "evidenceStatus": "external-observed",
-      "claimBoundary": "Classification-neutral current website destination; no relationship is asserted."
+      "claimBoundary": "Current learning-surface routing only; no legal or entity relationship to RazonWorks is asserted."
     }
   ],
   "preservedRuntimeFiles": [
@@ -79,7 +81,7 @@
   "candidateRuntimeFiles": [
     {
       "path": "index.html",
-      "sha256": "f2031989dcb0b2fd96dff49968e5bc9fc6c0cb76e02eb8ff02fcd8fa175e60f3"
+      "sha256": "3be865e622cd31c1fa1404e9e11cb9a804c35fafcc1b27585806fde6c9067fa3"
     },
     {
       "path": "favicon.png",
@@ -97,7 +99,7 @@
       "source": "index.html head title, description, Open Graph, theme color, and favicon declarations",
       "selectors": ["title", "meta[name=description]", "meta[property^=og]", "meta[name=theme-color]"],
       "classification": "rewrite",
-      "destination": "Use standalone Lab metadata without an unverified broadcast schedule or identity relationship claim. Keep https://razonlab.com/ canonical until an authorized redirect is completed.",
+      "destination": "Use standalone Lab metadata with the accepted public content role, without an unverified broadcast schedule or legal identity claim. Keep https://razonlab.com/ canonical until an authorized redirect is completed.",
       "evidenceStatus": "source-observed",
       "followUp": "Verify the standalone canonical and social assets before publishing; change the canonical only with an authorized redirect."
     },
@@ -107,7 +109,7 @@
       "source": "Organization, Person, and WebSite nodes in the JSON-LD graph",
       "selectors": ["script[type=application/ld+json]"],
       "classification": "rewrite",
-      "destination": "Model the standalone Lab only as an evidence-led experiment ledger without publisher, owner, parent, or sibling classifications.",
+      "destination": "Model the standalone Lab as an evidence-led experiment ledger without adding unsupported publisher, legal-entity, owner, parent-organization, or sibling-entity schema.",
       "evidenceStatus": "source-observed",
       "followUp": "Keep publisher, founder, job-title, sameAs, ownership, and organizational relationship assertions out until independently authorized."
     },
@@ -187,7 +189,7 @@
       "source": "hello@razonlab.com and broad work, collaboration, and question invitation",
       "selectors": ["#contact", "footer"],
       "classification": "rewrite",
-      "destination": "Route personal or collaboration intent to DavidTiz; keep sibling-site links classification-neutral and omit unresolved research email contact.",
+      "destination": "Route personal or collaboration intent to DavidTiz and commercial project intent to the RazonWorks request route; keep contracting and payment roles unresolved and omit the unverified research email contact.",
       "evidenceStatus": "external-unverified",
       "followUp": "Classify contact intent and verify the chosen destination before adding a public action."
     },
@@ -207,7 +209,7 @@
       "source": "favicon.png",
       "selectors": ["link[rel=icon]", "header img", "footer img"],
       "classification": "preserve",
-      "destination": "Retain as a provenance asset until the identity decision in issue #160 settles its final use.",
+      "destination": "Retain as a provenance asset until an integrated-brand review decides its final use.",
       "evidenceStatus": "asset-hash-observed",
       "followUp": "Check contrast, sizes, license, and integrated-brand fit before publication."
     },

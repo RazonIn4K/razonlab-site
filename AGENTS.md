@@ -4,14 +4,17 @@ This file provides guidance to agents and contributors working in this repositor
 
 ## Repository role
 
-This repository preserves the standalone Razon Live Lab source while its useful material is evaluated for migration. The selected source role is an evidence-led Razon Lab experiment ledger.
+This repository preserves the standalone Razon Live Lab source while its useful material is evaluated for migration. The accepted portfolio role is Razon Lab, the experimental research and prototyping arm of RazonWorks.
 
 Razon Lab serves technical peers, builders, and security researchers who want to inspect an experiment, benchmark, writeup, or demo. Its proof comes from methods, environments, observations, limitations, and reproducible artifacts. It is not a commercial intake site, a beginner course catalog, a general creator directory, or a second personal portfolio.
 
-The broader identity relationship remains unresolved and is tracked in
-`RazonIn4K/razonworks` issue `#160`. This repository may preserve neutral links
-to current public websites, but it must not classify their ownership, legal,
-commercial, learning, payment, contract, or organizational relationships.
+The canonical public content decision lives in the RazonWorks repository at
+`RazonIn4K/razonworks/docs/adr/0039-portfolio-brand-and-content-ownership.md`,
+`RazonIn4K/razonworks/docs/brand/portfolio-charter.md`, and
+`RazonIn4K/razonworks/docs/brand/content-ownership-ledger.md`. The separate
+legal, DBA, contracting, payment, privacy-controller, and RazonWorks-High
+Encode relationship decision remains unresolved in `RazonIn4K/razonworks#160`.
+Do not treat the accepted content role as an answer to that identity decision.
 
 Read [docs/BRAND-BOUNDARY.md](docs/BRAND-BOUNDARY.md) before changing content, links, hosting, or migration plans.
 
@@ -27,16 +30,19 @@ README.md   Repository status, change-control rules, and migration boundary.
 
 There is no package manifest or build step. Do not add a framework merely to complete the governance phase.
 
-## Public links and classification boundary
+## Public content routing and identity boundary
 
-- DavidTiz may be described as David's personal portfolio and collaboration surface.
-- RazonWorks and High Encode Learning may be named and linked only as current public websites.
-- Razon Lab publishes reproducible experiments, benchmarks, evaluations, prototypes, and research artifacts.
+- RazonWorks owns the commercial content role and current project-request route.
+- High Encode Learning owns the learning content role.
+- DavidTiz owns David's personal portfolio and collaboration context.
+- Razon Lab publishes reproducible experiments, benchmarks, evaluations,
+  prototypes, and research artifacts as the experimental arm of RazonWorks.
 
-Do not infer or publish an ownership, entity, DBA, commercial, learning,
-payment, contract, domain-ownership, replacement, or organizational
-relationship from those links. Issue `RazonIn4K/razonworks#160` is the decision
-record; the Lab source must not settle it implicitly.
+These are public content-routing roles. They do not identify a legal entity,
+DBA, contracting party, merchant or payment recipient, privacy data controller,
+domain registrant, or the legal relationship between RazonWorks and High Encode
+Learning. Issue `RazonIn4K/razonworks#160` remains the decision record for those
+unresolved roles.
 
 When another website needs context, summarize and link to the relevant artifact. Do not duplicate a full service description, lesson, personal case narrative, or experiment report.
 
@@ -58,12 +64,12 @@ Use evidence-safe terms such as `observed`, `reproduced`, `inferred`, and `unver
 
 ## Current source-candidate boundary
 
-The paired `/lab` and `/es/lab` routes exist in local source elsewhere, but
-their hosted behavior and organizational role have not been verified here.
-This source-only candidate awaiting approval preserves the inventory, rewrites
-the standalone presentation as an evidence-led Lab surface, restores only
-verified public channel destinations without a fixed availability claim, keeps
-sibling-site links classification-neutral, preserves the standalone canonical,
+The paired `/lab` and `/es/lab` target routes exist in local RazonWorks source.
+Their hosted behavior has not been verified. This source-only candidate awaiting
+approval preserves the inventory, rewrites the standalone presentation as an
+evidence-led Lab surface, restores only verified public channel destinations
+without a fixed availability claim, routes visitor intent to the current public
+surfaces without settling legal identity, preserves the standalone canonical,
 replaces the outdated social card, and adds local integrity tests. It does not
 authorize or complete any of the following:
 
@@ -73,15 +79,17 @@ authorize or complete any of the following:
 - deleting or archiving the standalone source;
 - claiming that a replacement destination is live.
 
-No redirect from the standalone domain is authorized until a destination has
-verified hosted behavior, useful source material has been preserved, the
-identity decision is resolved, and the user approves the cutover.
+No redirect from the standalone domain is authorized until both target routes
+have verified hosted behavior, useful source material has been preserved, the
+identity decision is resolved where it affects publication, and the user
+approves the cutover.
 
 ## Safe migration order
 
 1. Inventory the current source and classify each item as preserve, rewrite,
    retire, or verify. Completed in local source on 2026-08-10.
-2. Build candidate destinations with evidence fields and language parity without inferring ownership.
+2. Build paired `/lab` and `/es/lab` destinations in RazonWorks with evidence
+   fields and language parity without inferring legal identity.
 3. Verify metadata, canonical behavior, links, accessibility, responsive layouts, and hosted behavior.
 4. Preserve any standalone material that needs an archive URL or artifact record.
 5. Propose the domain redirect separately and obtain explicit approval.

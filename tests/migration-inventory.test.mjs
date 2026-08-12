@@ -47,17 +47,25 @@ const allowedEvidenceStatuses = new Set([
   "claim-unverified",
 ]);
 
-test("pins the preserved runtime source without selecting a migration owner", () => {
+test("pins the preserved runtime source and accepted RazonWorks destination", () => {
   assert.equal(inventory.schemaVersion, 2);
   assert.match(inventory.sourceRevision, /^[0-9a-f]{40}$/);
   assert.equal(
     inventory.sourceRevision,
     "4ee09a343c10f3ff5177f617193585640f067aab",
   );
-  assert.equal(inventory.targetRepository, null);
-  assert.deepEqual(inventory.targetRoutes, []);
+  assert.equal(inventory.targetRepository, "RazonIn4K/razonworks");
+  assert.deepEqual(inventory.targetRoutes, ["/lab", "/es/lab"]);
   assert.equal(inventory.targetHostedState, "unverified");
+  assert.equal(
+    inventory.publicContentRole,
+    "Experimental research arm of RazonWorks",
+  );
   assert.equal(inventory.identityDecision, "RazonIn4K/razonworks#160");
+  assert.match(inventory.identityBoundary, /legal contracting party/i);
+  assert.match(inventory.identityBoundary, /merchant and payment recipient/i);
+  assert.match(inventory.identityBoundary, /DBA/i);
+  assert.match(inventory.identityBoundary, /RazonWorks-High Encode relationship/i);
   assert.equal(inventory.candidateStatus, "local-source-only");
   assert.equal(inventory.candidateDeploymentAuthorized, false);
   assert.equal(inventory.candidateRedirectAuthorized, false);
@@ -101,7 +109,7 @@ test("matches every local source candidate file to its recorded digest", async (
 test("records the bounded external-link verification", () => {
   assert.deepEqual(
     inventory.candidateExternalLinks.map((link) => link.id),
-    ["youtube", "twitch", "x", "personal", "razonworks", "high-encode"],
+    ["youtube", "twitch", "x", "personal", "commercial", "learning"],
   );
   assert.deepEqual(
     inventory.candidateExternalLinks.map((link) => link.url),
@@ -110,7 +118,7 @@ test("records the bounded external-link verification", () => {
       "https://www.twitch.tv/razonlab",
       "https://x.com/Razonapp",
       "https://davidtiz.com/",
-      "https://razonworks.com/",
+      "https://razonworks.com/request",
       "https://highencodelearning.com/",
     ],
   );
@@ -122,11 +130,17 @@ test("records the bounded external-link verification", () => {
     assert.ok(link.claimBoundary.trim());
   }
 
-  for (const id of ["razonworks", "high-encode"]) {
-    const link = inventory.candidateExternalLinks.find((item) => item.id === id);
-    assert.match(link.claimBoundary, /classification-neutral/i);
-    assert.match(link.claimBoundary, /no relationship is asserted/i);
-  }
+  const commercial = inventory.candidateExternalLinks.find(
+    (item) => item.id === "commercial",
+  );
+  assert.match(commercial.claimBoundary, /commercial project routing only/i);
+  assert.match(commercial.claimBoundary, /contracting and payment roles unresolved/i);
+
+  const learning = inventory.candidateExternalLinks.find(
+    (item) => item.id === "learning",
+  );
+  assert.match(learning.claimBoundary, /learning-surface routing only/i);
+  assert.match(learning.claimBoundary, /no legal or entity relationship to RazonWorks/i);
 });
 
 test("keeps the standalone canonical until an authorized redirect", () => {
@@ -138,14 +152,16 @@ test("keeps the standalone canonical until an authorized redirect", () => {
   assert.match(metadata.followUp, /change the canonical only with an authorized redirect/i);
 });
 
-test("does not freeze unresolved ownership or sibling classifications", () => {
+test("keeps the accepted Lab role without settling legal or payment identity", () => {
   const serialized = JSON.stringify(inventory);
+  assert.match(serialized, /Experimental research arm of RazonWorks/);
   for (const forbidden of [
-    "experimental arm of RazonWorks",
-    "experimental research arm of RazonWorks",
-    "Commercial project routing",
-    "learning-surface routing",
-    "Use only RazonWorks-approved analytics",
+    "RazonWorks LLC",
+    "RazonWorks is a DBA",
+    "High Encode Learning LLC owns RazonWorks",
+    "legal contracting party is High Encode Learning LLC",
+    "merchant of record is High Encode Learning LLC",
+    "payment recipient is High Encode Learning LLC",
   ]) {
     assert.equal(serialized.includes(forbidden), false, `frozen classification: ${forbidden}`);
   }

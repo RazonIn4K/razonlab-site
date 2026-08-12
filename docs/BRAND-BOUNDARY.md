@@ -1,21 +1,23 @@
 # Razon Lab Brand Boundary
 
-> Razon Lab publishes inspectable experiment records with explicit evidence and limitations.
+> Razon Lab is the experimental research arm of RazonWorks. It publishes inspectable experiment records with explicit evidence and limitations.
 
 ## Authority
 
-The broader identity relationship is unresolved and tracked in
-`RazonIn4K/razonworks#160`. Until that decision closes, this repository must
-not classify a legal, ownership, commercial, learning, payment, contract,
-domain, replacement, or organizational relationship among the named websites.
+The accepted public content role is governed by the RazonWorks ADR, portfolio
+charter, and content-ownership ledger. The legal entity, DBA, contracting,
+payment, privacy-controller, domain-ownership, and RazonWorks-High Encode
+relationship remains unresolved in `RazonIn4K/razonworks#160`. This repository
+must preserve the accepted content role without presenting it as an answer to
+those separate identity questions.
 
 ## Brand contract
 
-- **Role:** evidence-led experiment ledger.
+- **Role:** experimental research and prototyping arm of RazonWorks.
 - **Primary audience:** technical peers, builders, and security researchers.
 - **Visitor situation:** evaluating how an emerging AI, automation, or security system behaved under a stated method and environment.
 - **One job:** make a specific experiment, benchmark, writeup, or demo inspectable.
-- **Working promise:** publish reproducible experiments and prototypes only after their evidence and limitations are inspectable.
+- **Working promise:** publish reproducible experiments and prototypes before RazonWorks treats an approach as client-ready, and only after the evidence and limitations are inspectable.
 - **Primary action:** inspect the method, evidence, limitations, artifacts, and next test.
 - **Proof mode:** research method, environment details, observations, reproduction evidence, and limitations.
 - **Voice:** precise, calm, testable, and explicit about uncertainty.
@@ -35,16 +37,18 @@ domain, replacement, or organizational relationship among the named websites.
 - David's full personal story, broad portfolio, employment pitch, or personal contact hub;
 - unsupported claims, generic trend commentary, or hype presented as a result.
 
-## Public-link boundary
+## Public content-routing boundary
 
-- DavidTiz may be described as David's personal portfolio and collaboration surface.
-- RazonWorks and High Encode Learning may be named and linked only as verified current websites.
-- Keep a full experiment record with Razon Lab. Another website may summarize and link to the record without duplicating it.
+- Send commercial service and project-request intent to the current RazonWorks request surface.
+- Send structured learning intent to the current High Encode Learning surface.
+- Send David's personal, collaboration, speaking, and peer context to DavidTiz.
+- Keep the full experiment record with Razon Lab. Another website may summarize and link to the record without duplicating it.
 
-Do not use a sibling link to infer or publish an ownership, entity, DBA,
-commercial, learning, payment, contract, domain-ownership, replacement, or
-organizational relationship. Issue `RazonIn4K/razonworks#160` is the decision
-record for that unresolved boundary.
+These content-routing roles do not identify a legal entity, DBA, contracting
+party, merchant or payment recipient, privacy data controller, domain owner, or
+the legal relationship between RazonWorks and High Encode Learning. Issue
+`RazonIn4K/razonworks#160` remains the decision record for that unresolved
+boundary.
 
 ## Evidence standard
 
@@ -64,12 +68,13 @@ Do not turn a local demonstration into a claim about production systems, populat
 ## Current repository status
 
 This repository contains a self-contained `index.html`, `favicon.png`, and
-`og.png`. The current source candidate identifies Razon Lab as an evidence-led
-experiment ledger, exposes the evidence contract, and presents an explicit
-zero-record state. It retires learning-in-public, recurring availability,
-generic channel-directory, broad contact, and unsupported identity-schema
-claims. It restores only channel destinations verified on 2026-08-12 and keeps
-the sibling-site links classification-neutral.
+`og.png`. The current source candidate identifies Razon Lab as the experimental
+research arm of RazonWorks and an evidence-led experiment ledger, exposes the
+evidence contract, and presents an explicit zero-record state. It retires
+learning-in-public, recurring availability, generic channel-directory, broad
+contact, and unsupported identity-schema claims. It restores only channel
+destinations verified on 2026-08-12 and routes visitor intent without settling
+legal identity.
 
 The source inventory at
 `docs/migration/standalone-source-inventory.json` now pins the preserved source
@@ -82,27 +87,28 @@ future availability.
 
 The hosting and domain details in the README are repository records. They were not live-verified by the documentation-only Phase 0 packet.
 
-## Candidate migration boundary
+## Planned migration boundary
 
-- Candidate `/lab` routes exist in local source elsewhere. Their target role,
-  preview state, and production state remain unverified here.
-- Neither Phase 0 nor the standalone source candidate deploys or hosts a replacement route.
+- RazonWorks `/lab` and `/es/lab` are the accepted targets and exist in local
+  source. Their preview and production state remain unverified here.
+- Neither Phase 0 nor the standalone source candidate deploys or hosts those routes.
 - The source candidate changes `index.html` and `og.png`; Vercel configuration,
   DNS, and the standalone domain remain unchanged by this repository work.
 - `https://razonlab.com/` remains the standalone canonical until a redirect is
   separately approved and completed.
-- No redirect from `razonlab.com` is authorized until a destination is selected,
-  hosted behavior is verified, useful source material is preserved, the
-  identity decision is resolved, and the user approves the cutover.
+- No redirect from `razonlab.com` is authorized until both target routes have
+  verified hosted behavior, useful source material is preserved, the identity
+  decision is resolved where it affects publication, and the user approves the
+  cutover.
 - A later archive or redirect must retain provenance for material that is not moved into the new Lab structure.
 
 ## Migration sequence
 
 1. Inventory current copy, claims, schedule information, links, metadata, structured data, and assets. Completed in local source on 2026-08-10.
 2. Classify each item as preserve, rewrite, retire, or verify. Completed in local source on 2026-08-10.
-3. Implement candidate destinations with the evidence contract above without
-   inferring ownership. Local source exists elsewhere; hosted verification
-   remains pending.
+3. Implement paired RazonWorks `/lab` and `/es/lab` destinations with the
+   evidence contract above without inferring legal identity. Local source
+   exists; hosted verification remains pending.
 4. Validate language parity, accessibility, responsive layout, metadata, canonical behavior, robots rules, sitemap entries, and hosted behavior.
 5. Preserve archive-worthy standalone artifacts.
 6. Request explicit approval for domain or redirect changes.

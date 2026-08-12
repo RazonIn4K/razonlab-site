@@ -24,8 +24,8 @@ function attributeValues(name) {
   );
 }
 
-test("publishes the standalone Lab evidence contract", () => {
-  assert.match(html, /Public experiment ledger/);
+test("publishes the accepted Lab role and evidence contract", () => {
+  assert.match(html, /Experimental research arm of RazonWorks/);
   assert.match(html, /Experiments earn their claims here\./);
   assert.match(html, /A result is not yet a record\./);
   assert.match(html, /The public experiment ledger is intentionally empty\./);
@@ -65,14 +65,11 @@ test("removes unverified broadcast, cadence, email, and identity assertions", ()
     "mailto:",
     "data-link",
     "High Encode Learning LLC",
-    "experimental research arm of RazonWorks",
-    "research arm of RazonWorks",
-    "Commercial services",
-    "Commercial requests",
-    "commercial project",
-    "learning surface",
-    "guided practice",
-    "owner-link",
+    "High Encode Learning LLC owns RazonWorks",
+    "RazonWorks is a DBA",
+    "legal contracting party is",
+    "merchant of record is",
+    "payment recipient is",
   ]) {
     assert.equal(
       html.toLowerCase().includes(forbidden.toLowerCase()),
@@ -96,33 +93,27 @@ test("publishes only the verified public channel destinations without cadence cl
   assert.match(html, /only after it meets the publication standard above\./);
 });
 
-test("keeps sibling links classification-neutral and personal routing explicit", () => {
+test("routes personal, commercial, and learning intent without legal inference", () => {
   assert.match(html, /href="https:\/\/davidtiz\.com\/"/);
-  assert.match(html, /href="https:\/\/razonworks\.com\/"/);
+  assert.match(html, /href="https:\/\/razonworks\.com\/request"/);
   assert.match(html, /href="https:\/\/highencodelearning\.com\/"/);
   assert.match(html, /personal portfolio and context for collaboration/);
-  assert.match(html, /Open the current RazonWorks website\./);
-  assert.match(html, /Open the current High Encode Learning website\./);
-  assert.match(html, /does not define a legal, business, payment, contractual, or organizational relationship\./);
-  assert.doesNotMatch(html, /RazonWorks (?:is|as|belongs|operates|owns) (?:a|an|the|under)/i);
-  assert.doesNotMatch(html, /High Encode Learning (?:is|as|belongs|operates|owns) (?:a|an|the|under)/i);
+  assert.match(html, /Commercial services and a scoped project request\./);
+  assert.match(html, /Structured lessons and guided practice grounded in real builds\./);
+  assert.match(html, /without defining a legal entity, DBA, contracting, payment, or ownership relationship\./);
+  assert.doesNotMatch(html, /High Encode Learning (?:LLC )?(?:owns|operates|is the parent of) RazonWorks/i);
 });
 
-test("forbids the frozen sibling ownership and role classifications", () => {
+test("preserves the accepted content role without settling legal identity", () => {
+  assert.match(governanceText, /experimental research arm of RazonWorks/i);
+  assert.match(governanceText, /RazonIn4K\/razonworks#160/);
   for (const forbidden of [
-    "experimental research arm of RazonWorks",
-    "experimental research and prototyping arm of RazonWorks",
-    "experimental arm of RazonWorks",
-    "as part of RazonWorks",
-    "RazonWorks owns",
-    "RazonWorks is the only owner",
-    "RazonWorks is the current public route for commercial",
-    "current RazonWorks request surface",
-    "Commercial project routing",
-    "High Encode Learning owns",
-    "High Encode Learning is the current learning surface",
-    "current learning surface for structured lessons",
-    "learning-surface routing",
+    "RazonWorks LLC",
+    "RazonWorks is a DBA",
+    "High Encode Learning LLC owns RazonWorks",
+    "legal contracting party is High Encode Learning LLC",
+    "merchant of record is High Encode Learning LLC",
+    "payment recipient is High Encode Learning LLC",
   ]) {
     assert.equal(
       governanceText.toLowerCase().includes(forbidden.toLowerCase()),
@@ -168,7 +159,7 @@ test("keeps discovery metadata and outbound navigation bounded", () => {
         href === "https://www.twitch.tv/razonlab" ||
         href === "https://x.com/Razonapp" ||
         href === "https://davidtiz.com/" ||
-        href === "https://razonworks.com/" ||
+        href === "https://razonworks.com/request" ||
         href === "https://highencodelearning.com/",
       `unexpected link destination: ${href}`,
     );
